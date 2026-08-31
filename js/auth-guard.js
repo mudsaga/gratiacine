@@ -1,14 +1,14 @@
-(function(){
-  // Auth guard for protected pages. Redirects to /login.html if not authenticated.
-  // This file assumes firebase and firebase.auth are available (loaded before this script).
+// Auth guard for protected pages. Redirects to /login.html if not authenticated.
+// This file assumes firebase and firebase.auth are available (loaded before this script).
 
+(function(){
   function redirectToLogin(){
     window.location.href = '/login.html';
   }
 
   function showAuthDenied(){
     document.body.removeAttribute('data-auth');
-    document.body.innerHTML = '<div style="min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;background:#0f172a;color:#fff;font-family:sans-serif"><div style="max-width:760px;text-align:center;border:1px solid rgba(255,255,255,0.06);padding:28px;border-radius:12px;background:rgba(0,0,0,0.4)"><h2 style="margin-top:0">Acesso restrito</h2><p style="color:#cbd5e1;margin:10px 0 18px">Você precisa estar autenticado para acessar este painel. <a href="/login.html" style="color:#8ea2ff;font-weight:800">Ir para Login</a></p></div></div>';
+    document.body.innerHTML = '<div style="min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;background:#0f172a;color:#fff;font-family:sans-serif"><div style="max-width:720px;text-align:center"><h2>A autenticação não foi carregada</h2><p>Por favor verifique a conexão com a CDN do Firebase e tente novamente.</p></div></div>';
   }
 
   function waitForFirebase(maxMs){

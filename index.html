@@ -12,7 +12,7 @@
 }
 /* Esconde o conteúdo até a checagem de autenticação ser concluída */
 body[data-auth="pending"]{visibility:hidden}
-[data-theme="light"]{aa
+[data-theme="light"]{
   --bg:#f1f5f9;--panel:#ffffff;--text:#0f172a;--muted:#64748b;--line:#cbd5e1;
   --primary:#6366f1;--primary2:#4f46e5;--dark:#e2e8f0;--green:#059669;
   --shadow:0 12px 35px rgba(0,0,0,.08);
@@ -140,8 +140,8 @@ button{cursor:pointer;border:0}
     <div class="eyebrow">CONTROLE CINEMATOGRÁFICO</div>
     <div style="display:flex; align-items:center; gap:16px; margin:10px 0 14px;">
       <div style="position:relative; width:55px; height:55px; flex-shrink:0;">
-        <img id="heroIconImg" src="https://via.placeholder.com/55/334155/fff?text=G" style="width:55px; height:55px; border-radius:50%; object-fit:cover; border:2px solid var(--primary); background:linear-gradient(90deg,#334155,#1f2937)"/>
-        <label style="position:absolute; bottom:-2px; right:-2px; background:var(--primary); width:22px; height:22px; border-radius:50%; display:grid; place-items:center; cursor:pointer; overflow:hidden;">
+        <img id="heroIconImg" src="https://via.placeholder.com/55/334155/fff?text=G" style="width:55px; height:55px; border-radius:50%; object-fit:cover; border:2px solid var(--primary); background:#fff" />
+        <label style="position:absolute; bottom:-2px; right:-2px; background:var(--primary); width:22px; height:22px; border-radius:50%; display:grid; place-items:center; cursor:pointer; overflow:hidden">
           📷
           <input type="file" style="display:none;" accept="image/*" onchange="updateHeroIcon(event)">
         </label>
