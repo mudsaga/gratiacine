@@ -1,10 +1,25 @@
 // Frontend minimal com Firebase (compat) — substitua firebaseConfig abaixo pelo seu config web
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "REPLACE_ME",
-  authDomain: "REPLACE_ME",
-  projectId: "REPLACE_ME",
-  // demais campos...
+  apiKey: "AIzaSyBvDSjwIB676OYpwarisxm-Dt8TZHdLTtQ",
+  authDomain: "gratia-e180a.firebaseapp.com",
+  projectId: "gratia-e180a",
+  storageBucket: "gratia-e180a.firebasestorage.app",
+  messagingSenderId: "613805854975",
+  appId: "1:613805854975:web:7c7512466416e4a8397cca",
+  measurementId: "G-35ST11M8BC"
 };
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
 
 if (!firebase.apps.length) {
   firebase.initializeApp(firebaseConfig);
