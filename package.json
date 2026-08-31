@@ -1,13 +1,12 @@
 {
-  "name": "gratiacine-backend",
+  "name": "gratiacine-auth-seed",
   "version": "1.0.0",
-  "private": true,
-  "engines": {
-    "node": "18.x"
+  "description": "Scripts mínimos para criar admin (Firebase) e arquivos frontend para login/profile",
+  "main": "scripts/create-admin-firebase.js",
+  "scripts": {
+    "create-admin": "node scripts/create-admin-firebase.js"
   },
   "dependencies": {
-    "node-fetch": "^2.6.7",
-    "xml2js": "^0.4.23",
-    "firebase-admin": "^11.10.0"
+    "firebase-admin": "^11.11.0"
   }
 }
