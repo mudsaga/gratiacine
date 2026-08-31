@@ -10,7 +10,7 @@
   --primary:#6366f1;--primary2:#818cf8;--dark:#090d16;--green:#10b981;
   --shadow:0 12px 35px rgba(0,0,0,.3);--radius:20px;
 }
-[data-theme="light"]{
+[data-theme="light"]{aa
   --bg:#f1f5f9;--panel:#ffffff;--text:#0f172a;--muted:#64748b;--line:#cbd5e1;
   --primary:#6366f1;--primary2:#4f46e5;--dark:#e2e8f0;--green:#059669;
   --shadow:0 12px 35px rgba(0,0,0,.08);
@@ -20,31 +20,15 @@ body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-s
 button,input,select,textarea{font:inherit}
 button{cursor:pointer;border:0}
 .topbar{position:sticky;top:0;z-index:20;background:var(--bg);backdrop-filter:blur(18px);border-bottom:1px solid var(--line);transition:background .2s}
-.nav{max-width:1320px;margin:auto;padding:12px 22px;display:flex;align-items:center;gap:18px}
+.nav{max-width:1320px;margin:auto;padding:14px 22px;display:flex;align-items:center;gap:18px}
 .logo{display:flex;align-items:center;gap:12px;font-weight:900;font-size:21px;color:var(--text);letter-spacing:-.02em}
 
-.topbar-right{margin-left:auto;display:flex;align-items:center;gap:14px}
-.user-badge-btn{
-  background:var(--panel);
-  border:1px solid var(--line);
-  color:var(--text);
-  padding:5px 12px;
-  border-radius:30px;
-  display:flex;
-  align-items:center;
-  gap:10px;
-  cursor:pointer;
-  transition:.2s;
-}
-.user-badge-btn:hover{border-color:var(--primary2)}
-.user-badge-avatar{width:30px;height:30px;border-radius:50%;object-fit:cover;border:2px solid var(--primary)}
-.user-badge-name{font-size:13px;font-weight:800;text-transform:capitalize}
-
+.topbar-right{margin-left:auto;display:flex;align-items:center;gap:12px}
 .theme-toggle-btn{
   background:var(--panel);
   border:1px solid var(--line);
   color:var(--text);
-  padding:8px 12px;
+  padding:6px 12px;
   border-radius:10px;
   font-size:12px;
   font-weight:700;
@@ -53,7 +37,7 @@ button{cursor:pointer;border:0}
 }
 .theme-toggle-btn:hover{background:var(--primary);color:#fff}
 
-/* Bloco Hero */
+/* Bloco Hero customizável com imagem de fundo */
 .hero{
   background:linear-gradient(135deg,#090d16 0%,#1e1b4b 55%,#312e81 150%);
   color:#fff;
@@ -68,7 +52,7 @@ button{cursor:pointer;border:0}
   background:rgba(9, 13, 22, 0.75);
   z-index:1;
 }
-.hero-inner{max-width:1320px;margin:auto;padding:48px 22px 38px;position:relative;z-index:2}
+.hero-inner{max-width:1320px;margin:auto;padding:52px 22px 42px;position:relative;z-index:2}
 .hero-bg-btn{
   position:absolute;
   top:16px;
@@ -86,10 +70,10 @@ button{cursor:pointer;border:0}
 .hero-bg-btn:hover{background:var(--primary)}
 
 .eyebrow{text-transform:uppercase;letter-spacing:.14em;font-size:12px;font-weight:800;color:#a5b4fc}
-.hero h1{font-size:clamp(34px,5vw,56px);line-height:1;margin:10px 0 12px;letter-spacing:-.04em}
-.hero p{max-width:720px;color:#cbd5e1;font-size:16px;line-height:1.6;margin:0}
+.hero h1{font-size:clamp(34px,5vw,60px);line-height:1;margin:10px 0 14px;letter-spacing:-.04em}
+.hero p{max-width:720px;color:#cbd5e1;font-size:17px;line-height:1.6;margin:0}
 
-/* Abas */
+/* Abas de Navegação */
 .tabs-bar{
   max-width:1320px;
   margin:22px auto 0;
@@ -139,11 +123,11 @@ button{cursor:pointer;border:0}
 .card:hover{border-color:var(--primary2);transform: translateY(-3px);}
 .clickable-card { cursor: pointer; }
 
-/* Seletor de países */
+/* Seletor de países unificado */
 .country-select-container{margin-bottom:24px;display:flex;align-items:center;gap:12px;background:var(--panel);padding:14px 18px;border-radius:16px;border:1px solid var(--line)}
 .country-select{background:var(--bg);border:1px solid var(--line);color:var(--text);padding:10px 14px;border-radius:10px;outline:none;font-weight:700;min-width:240px}
 
-/* Estilo do Card de Membro */
+/* Estilo do Card de Membro com Capa de Fundo */
 .member-header{
   padding:25px 20px 20px;
   text-align:center;
@@ -164,8 +148,32 @@ button{cursor:pointer;border:0}
   z-index:2;
 }
 
+.member-banner-btn{
+  position:absolute;
+  top:10px;
+  right:10px;
+  background:rgba(15, 23, 42, 0.8);
+  border:1px solid var(--line);
+  color:#fff;
+  width:30px;
+  height:30px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  font-size:12px;
+  cursor:pointer;
+  z-index:3;
+  transition:.2s;
+}
+.member-banner-btn:hover{background:var(--primary)}
+.member-banner-input{display:none}
+
 .member-avatar-wrap{position:relative;width:90px;height:90px;margin:0 auto 12px}
 .member-avatar{width:90px;height:90px;border-radius:50%;object-fit:cover;border:3px solid var(--primary);background:#334155}
+.member-avatar-input{display:none}
+.member-avatar-btn{position:absolute;bottom:0;right:0;background:var(--primary);width:26px;height:26px;border-radius:50%;display:grid;place-items:center;cursor:pointer;z-index:4;overflow:hidden;border:2px solid var(--panel)}
+.member-avatar-btn img{width:100%;height:100%;object-fit:cover}
+
 .member-name{font-size:19px;font-weight:900;margin:0 0 4px;text-transform:capitalize;color:var(--text)}
 
 .member-body{padding:16px;flex:1;display:flex;flex-direction:column;gap:10px}
@@ -173,9 +181,6 @@ button{cursor:pointer;border:0}
 .input-box:focus{border-color:var(--primary)}
 textarea.input-box{resize:none}
 
-.file-input-custom {
-  background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:6px 10px;font-size:12px;color:var(--muted);width:100%;outline:none;
-}
 input[type="file"]::file-selector-button {
   background: var(--primary);
   color: white;
@@ -187,6 +192,10 @@ input[type="file"]::file-selector-button {
   margin-right: 10px;
   transition: .2s;
 }
+input[type="file"]::file-selector-button:hover {background: var(--primary2)}
+.file-input-custom {
+  background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:6px 10px;font-size:12px;color:var(--muted);width:100%;outline:none;
+}
 
 .btn{height:42px;padding:0 16px;border-radius:12px;background:var(--primary);color:#fff;font-weight:800;transition:.2s;display:inline-flex;align-items:center;justify-content:center;gap:6px}
 .btn:hover{background:var(--primary2); transform: translateY(-1px);}
@@ -194,7 +203,7 @@ input[type="file"]::file-selector-button {
 .btn-danger{background:#ef4444}
 .btn-danger:hover{background:#dc2626}
 
-/* Tabelas */
+/* Tabelas e Overflow para evitar que o seletor de emojis seja cortado */
 .rank-table{width:100%;border-collapse:collapse;background:var(--panel);border-radius:var(--radius);overflow:visible !important;border:1px solid var(--line);transition:background .2s}
 .rank-table th,.rank-table td{padding:16px 20px;text-align:left;border-bottom:1px solid var(--line);vertical-align:middle;color:var(--text);overflow:visible !important}
 .rank-table th{background:var(--dark);color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.05em}
@@ -202,14 +211,316 @@ input[type="file"]::file-selector-button {
 .clickable-row { cursor: pointer; transition: background .2s; }
 .clickable-row:hover { background: rgba(99, 102, 241, 0.08); }
 
-tr.row-podium { background-color: rgba(16, 185, 129, 0.16) !important; }
-tr.row-relegation { background-color: rgba(239, 68, 68, 0.18) !important; }
+/* Cores do Ranking */
+tr.row-podium {
+  background-color: rgba(16, 185, 129, 0.16) !important;
+}
+tr.row-podium td {
+  border-bottom-color: rgba(16, 185, 129, 0.5) !important;
+}
+tr.row-relegation {
+  background-color: rgba(239, 68, 68, 0.18) !important;
+}
+tr.row-relegation td {
+  border-bottom-color: rgba(239, 68, 68, 0.6) !important;
+}
+
+/* ESTILO MODERNO / LETTERBOXD EXCLUSIVO PARA A LISTA DE CATEGORIAS */
+.categories-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.category-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  transition: all .25s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,.2);
+}
+.category-card:hover {
+  border-color: var(--primary2);
+  transform: translateY(-2px);
+}
+.category-card.category-done {
+  background: linear-gradient(90deg, rgba(16, 185, 129, 0.08) 0%, var(--panel) 100%);
+  border-color: rgba(16, 185, 129, 0.35);
+}
+.category-card.category-done .cat-title {
+  color: var(--green);
+  font-weight: 800;
+}
+.cat-checkbox-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cat-checkbox {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 24px;
+  height: 24px;
+  background: var(--bg);
+  border: 2px solid var(--line);
+  border-radius: 6px;
+  cursor: pointer;
+  display: grid;
+  place-content: center;
+  transition: .2s;
+}
+.cat-checkbox:checked {
+  background: var(--green);
+  border-color: var(--green);
+  transform: scale(1.1);
+}
+.cat-checkbox:checked::before {
+  content: "✔";
+  font-size: 14px;
+  color: #fff;
+  font-weight: 900;
+}
+.cat-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.cat-number {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--muted);
+  font-weight: 700;
+}
+.cat-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--text);
+  display: inline-block;
+}
+.cat-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.cat-controls select {
+  background: var(--bg);
+  border: 1px solid var(--line);
+  color: var(--text);
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-size: 13px;
+  outline: none;
+  transition: .2s;
+}
+.cat-controls select:focus {
+  border-color: var(--primary);
+}
+
+/* ABA RODADAS */
+.rounds-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.round-blocks-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  background: var(--panel);
+  padding: 14px;
+  border-radius: 16px;
+  border: 1px solid var(--line);
+  justify-content: center;
+}
+.round-block-btn {
+  background: var(--bg);
+  color: var(--muted);
+  border: 1px solid var(--line);
+  padding: 8px 14px;
+  border-radius: 10px;
+  font-weight: 800;
+  font-size: 12px;
+  transition: all .2s;
+}
+.round-block-btn:hover {
+  border-color: var(--primary2);
+  color: var(--text);
+}
+.round-block-btn.active {
+  background: var(--primary2);
+  color: #fff;
+  border-color: var(--primary2);
+  box-shadow: 0 4px 12px rgba(129, 140, 248, 0.3);
+}
+
+.round-pills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  background: var(--bg);
+  padding: 14px;
+  border-radius: 14px;
+  border: 1px solid var(--line);
+}
+.round-pill {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  color: var(--muted);
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  font-weight: 900;
+  font-size: 13px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: all .2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.round-pill:hover {
+  border-color: var(--primary);
+  color: var(--text);
+  transform: scale(1.08);
+}
+.round-pill.active {
+  background: var(--primary);
+  color: #fff;
+  border-color: var(--primary);
+  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.5);
+  transform: scale(1.12);
+}
+
+.round-content-pane {
+  display: none;
+}
+.round-content-pane.active {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+  animation: popIn .3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes popIn {
+  from { opacity: 0; transform: scale(0.96); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.participant-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  box-shadow: var(--shadow);
+  transition: all .25s ease;
+  position: relative;
+  overflow: hidden;
+}
+.participant-card::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--primary), var(--primary2));
+  opacity: 0.3;
+  transition: opacity .2s;
+}
+.participant-card:hover {
+  border-color: var(--primary);
+  transform: translateY(-3px);
+  box-shadow: 0 16px 40px rgba(0,0,0,.4);
+}
+.participant-card:hover::after {
+  opacity: 1;
+}
+.participant-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.participant-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--primary);
+  background: var(--dark);
+}
+.participant-name {
+  font-size: 17px;
+  font-weight: 900;
+  text-transform: capitalize;
+  color: var(--text);
+}
+.participant-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: var(--bg);
+  padding: 14px;
+  border-radius: 14px;
+  border: 1px solid var(--line);
+}
+.option-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--muted);
+}
+.option-checkbox {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 22px;
+  height: 22px;
+  background: var(--panel);
+  border: 2px solid var(--line);
+  border-radius: 6px;
+  cursor: pointer;
+  display: grid;
+  place-content: center;
+  transition: all .2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.option-checkbox:hover {
+  border-color: var(--green);
+  transform: scale(1.1);
+}
+.option-checkbox:checked {
+  background: var(--green);
+  border-color: var(--green);
+  transform: scale(1.15);
+  box-shadow: 0 0 12px rgba(16, 185, 129, 0.4);
+}
+.option-checkbox:checked::before {
+  content: "✔";
+  font-size: 13px;
+  color: #fff;
+  font-weight: 900;
+}
+
+@media(max-width: 900px) {
+  .category-card { flex-direction: column; align-items: stretch; gap: 12px; }
+  .cat-controls { flex-direction: column; width: 100%; min-width: 0; }
+  .cat-controls select { width: 100%; }
+}
 
 /* Modals */
 .modal{position:fixed;inset:0;background:rgba(0,0,0,.75);backdrop-filter:blur(7px);display:none;align-items:center;justify-content:center;padding:18px;z-index:50}
 .modal.open{display:flex}
 .dialog{width:min(750px,100%);max-height:92vh;overflow:auto;background:var(--panel);border:1px solid var(--line);border-radius:24px;box-shadow:0 30px 80px #000;position:relative;padding:30px;transition:background .2s}
 .close{position:absolute;right:18px;top:18px;width:36px;height:36px;border-radius:50%;background:var(--bg);color:var(--text);border:1px solid var(--line);font-size:20px;display:grid;place-items:center;cursor:pointer}
+
+/* Grid de Filmes por País */
+.movie-grid-card{background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:12px;display:flex;gap:16px;align-items:center;transition:background .2s;position:relative}
+.movie-thumb{width:100px;height:140px;object-fit:contain;border-radius:8px;background:var(--dark);flex-shrink:0}
+.table-movie-thumb{width:70px;height:95px;object-fit:contain;border-radius:8px;background:var(--dark);flex-shrink:0}
 
 footer{max-width:1320px;margin:auto;padding:0 22px 35px;color:var(--muted);font-size:12px;text-align:center}
 </style>
@@ -220,12 +531,8 @@ footer{max-width:1320px;margin:auto;padding:0 22px 35px;color:var(--muted);font-
   <div class="nav">
     <div class="logo">Gratia · Clube de Cinema</div>
     <div class="topbar-right">
-      <div class="user-badge-btn" onclick="openProfileModal()">
-        <img id="topbarUserAvatar" src="https://via.placeholder.com/30/334155/fff?text=U" class="user-badge-avatar" alt="Avatar">
-        <span id="topbarUserName" class="user-badge-name">Selecionar Usuário</span>
-        <span style="font-size:10px; color:var(--muted)">▼</span>
-      </div>
       <button class="theme-toggle-btn" onclick="toggleTheme()" id="themeBtn">☀️ Modo Claro</button>
+      <span style="color:var(--muted);font-size:13px;font-weight:700">Painel do Grupo</span>
     </div>
   </div>
 </header>
@@ -247,7 +554,7 @@ footer{max-width:1320px;margin:auto;padding:0 22px 35px;color:var(--muted);font-
       </div>
       <h1 style="margin:0; letter-spacing:-.04em;">Gratia.</h1>
     </div>
-    <p>Gerencie seu perfil, pontuações, rankings e filmes com sincronização automática das suas preferências.</p>
+    <p>Gerencie os membros, pontuações, rankings e os filmes indicados com total liberdade de edição.</p>
   </div>
 </section>
 
@@ -259,6 +566,8 @@ footer{max-width:1320px;margin:auto;padding:0 22px 35px;color:var(--muted);font-
   <button class="tab-btn" onclick="switchTab('history')">🎥 Histórico Geral</button>
   <button class="tab-btn" onclick="switchTab('directors')">🎬 Diretores</button>
   <button class="tab-btn" onclick="switchTab('year')">📅 Ano</button>
+  <button class="tab-btn" onclick="switchTab('list')">📋 Lista de Categorias</button>
+  <button class="tab-btn" onclick="switchTab('rounds')">🔄 Rodadas</button>
   <button class="tab-btn" onclick="switchTab('countries')">🌍 Filmes por País</button>
 </div>
 
@@ -266,16 +575,13 @@ footer{max-width:1320px;margin:auto;padding:0 22px 35px;color:var(--muted);font-
 
   <!-- ABA 1: MEMBROS & CARDS -->
   <div id="tab-members" class="section-view active">
-    <div class="toolbar">
-      <div class="result">Membros cadastrados, seus estilos e filmes favoritos do Letterboxd.</div>
-      <button class="btn btn-sm" onclick="openProfileModal()">⚙️ Editar Meu Perfil</button>
-    </div>
+    <div class="toolbar"><div class="result">Personalize a foto de fundo e o perfil de cada membro. Os 4 principais filmes do Ranking Gratia aparecem diretamente abaixo.</div></div>
     <div class="grid" id="membersGrid"></div>
   </div>
 
   <!-- ABA 2: RANKING DE VOTAÇÕES -->
   <div id="tab-votesRank" class="section-view">
-    <div class="toolbar"><div class="result">Vitórias registradas dos membros</div></div>
+    <div class="toolbar"><div class="result">Gerencie e acompanhe as vitórias dos membros do grupo em tempo real (ordenado por pontos)</div></div>
     <table class="rank-table">
       <thead>
         <tr>
@@ -291,7 +597,7 @@ footer{max-width:1320px;margin:auto;padding:0 22px 35px;color:var(--muted);font-
   <!-- ABA 3: RANKING DE MÉDIA DO GRUPO -->
   <div id="tab-moviesRank" class="section-view">
     <div class="toolbar">
-      <div class="result">Filmes avaliados pelo clube</div>
+      <div class="result">Adicione e controle os filmes avaliados pelo grupo</div>
       <button class="btn btn-sm" onclick="openAddMovieModel()">+ Adicionar Filme</button>
     </div>
     <table class="rank-table">
@@ -320,16 +626,40 @@ footer{max-width:1320px;margin:auto;padding:0 22px 35px;color:var(--muted);font-
     </table>
   </div>
 
-  <!-- ABA 5: DIRETORES -->
+  <!-- ABA NOVA: DIRETORES -->
   <div id="tab-directors" class="section-view">
-    <div class="toolbar"><div class="result">Diretores registrados e quantidade de obras vistas</div></div>
+    <div class="toolbar">
+      <div class="result">Diretores dos filmes assistidos ordenados por quantidade de obras no Gratia (Clique em um diretor para ver o card especial)</div>
+    </div>
     <div class="grid" id="directorsGridContainer"></div>
   </div>
 
-  <!-- ABA 6: ANO -->
+  <!-- ABA NOVA: ANO -->
   <div id="tab-year" class="section-view">
-    <div class="toolbar"><div class="result">Filmes organizados por ano de lançamento</div></div>
+    <div class="toolbar">
+      <div class="result">Filmes organizados pelo ano de lançamento registrados no histórico</div>
+    </div>
     <div class="grid" id="yearGridContainer"></div>
+  </div>
+
+  <!-- ABA 5: LISTA DE CATEGORIAS -->
+  <div id="tab-list" class="section-view">
+    <div class="toolbar">
+      <div class="result">Acompanhe as 34 categorias temáticas. Clique no botão de visualização para ver os filmes indicados.</div>
+    </div>
+    <div class="categories-container" id="categoryContainer"></div>
+  </div>
+
+  <!-- ABA 6: RODADAS (1 A 100) -->
+  <div id="tab-rounds" class="section-view">
+    <div class="toolbar">
+      <div class="result">Controle de sorteio e votação por rodada</div>
+    </div>
+    <div class="rounds-wrapper">
+      <div class="round-blocks-bar" id="roundBlocksBar"></div>
+      <div class="round-pills-grid" id="roundPillsGrid"></div>
+      <div id="roundsContentContainer" style="margin-top: 10px;"></div>
+    </div>
   </div>
 
   <!-- ABA 7: FILMES POR PAÍS -->
@@ -351,62 +681,6 @@ footer{max-width:1320px;margin:auto;padding:0 22px 35px;color:var(--muted);font-
 
 </main>
 
-<!-- Modal: Gerenciamento de Login & Perfil do Usuário -->
-<div class="modal" id="modalUserProfile" onclick="closeModalOnOutside(event, 'modalUserProfile')">
-  <div class="dialog" style="width:580px;" onclick="event.stopPropagation()">
-    <button class="close" onclick="closeModal('modalUserProfile')">×</button>
-    <h3 style="margin-top:0; color:var(--text); font-size:22px;">Perfil & Sessão do Membro</h3>
-    
-    <div style="margin-bottom:16px; background:var(--bg); padding:12px; border-radius:12px; border:1px solid var(--line);">
-      <label style="font-size:11px; color:var(--muted); font-weight:800; text-transform:uppercase; display:block; margin-bottom:6px;">Conectar como:</label>
-      <select id="activeUserSelect" class="input-box" onchange="changeCurrentUser(this.value)">
-      </select>
-    </div>
-
-    <div style="display:grid; gap:12px;">
-      <div>
-        <label style="font-size:11px; color:var(--muted); font-weight:700; display:block; margin-bottom:4px;">NOME DE EXIBIÇÃO:</label>
-        <input type="text" id="profileName" class="input-box" placeholder="Seu nome">
-      </div>
-
-      <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px;">
-        <div>
-          <label style="font-size:11px; color:var(--muted); font-weight:700; display:block; margin-bottom:4px;">FOTO DE PERFIL (AVATAR):</label>
-          <input type="file" id="profileAvatarFile" class="file-input-custom" accept="image/*" onchange="previewProfileAvatar(this)">
-        </div>
-        <div>
-          <label style="font-size:11px; color:var(--muted); font-weight:700; display:block; margin-bottom:4px;">FOTO DE CAPA (BANNER):</label>
-          <input type="file" id="profileBannerFile" class="file-input-custom" accept="image/*" onchange="previewProfileBanner(this)">
-        </div>
-      </div>
-
-      <div>
-        <label style="font-size:11px; color:var(--muted); font-weight:700; display:block; margin-bottom:4px;">MINI BIO / ESTILO:</label>
-        <textarea id="profileBio" class="input-box" rows="2" placeholder="Mini biografia sobre seus gostos no cinema..."></textarea>
-      </div>
-
-      <div>
-        <label style="font-size:11px; color:var(--muted); font-weight:700; display:block; margin-bottom:4px;">LINK DO LETTERBOXD:</label>
-        <input type="text" id="profileLink" class="input-box" placeholder="https://letterboxd.com/seu-usuario">
-      </div>
-
-      <div style="border-top:1px solid var(--line); padding-top:12px; margin-top:4px;">
-        <label style="font-size:12px; color:var(--primary2); font-weight:800; text-transform:uppercase; display:block; margin-bottom:8px;">🍿 Filme Favorito (Destaque do Perfil):</label>
-        <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:10px;">
-          <input type="text" id="profileFavTitle" class="input-box" placeholder="Título do filme favorito">
-          <input type="text" id="profileFavLink" class="input-box" placeholder="Link do filme (Letterboxd/Trailer)">
-        </div>
-        <div>
-          <label style="font-size:11px; color:var(--muted); font-weight:700; display:block; margin-bottom:4px;">PÔSTER DO FILME FAVORITO:</label>
-          <input type="file" id="profileFavThumbFile" class="file-input-custom" accept="image/*" onchange="previewProfileFavThumb(this)">
-        </div>
-      </div>
-
-      <button class="btn" onclick="saveUserProfile()" style="margin-top:8px;">Salvar Alterações de Perfil</button>
-    </div>
-  </div>
-</div>
-
 <!-- Modal: Adicionar Filme ao Histórico Geral -->
 <div class="modal" id="modalHistoryMovie" onclick="closeModalOnOutside(event, 'modalHistoryMovie')">
   <div class="dialog" style="width:500px;" onclick="event.stopPropagation()">
@@ -414,12 +688,20 @@ footer{max-width:1320px;margin:auto;padding:0 22px 35px;color:var(--muted);font-
     <h3 style="margin-top:0; color:var(--text);">Adicionar Filme ao Histórico</h3>
     <div style="display:grid; gap:10px;">
       <input type="text" id="historyTitle" class="input-box" placeholder="Título do filme">
-      <input type="text" id="historyDirector" class="input-box" placeholder="Diretor do filme">
-      <input type="text" id="historyYear" class="input-box" placeholder="Ano de lançamento">
+      <input type="text" id="historyDirector" class="input-box" placeholder="Diretor do filme (ex: Christopher Nolan)">
+      <input type="text" id="historyYear" class="input-box" placeholder="Ano de lançamento (ex: 2014)">
       <textarea id="historySynopsis" class="input-box" placeholder="Sinopse do filme" rows="3"></textarea>
       <input type="text" id="historyStreams" class="input-box" placeholder="Onde assistir (ex: netflix, prime video, max)">
-      <input type="text" id="historyCountry" class="input-box" placeholder="País de origem do filme">
+      <input type="text" id="historyIndicatedBy" class="input-box" placeholder="Quem indicou o filme">
+      <input type="text" id="historyCountry" class="input-box" placeholder="País de origem do filme (ex: Brasil)">
       
+      <div>
+        <label style="font-size:11px; color:var(--muted); font-weight:700; display:block; margin-bottom:4px;">CATEGORIA:</label>
+        <select id="historyCategorySelect" class="input-box">
+          <option value="">Selecione a categoria</option>
+        </select>
+      </div>
+
       <div>
         <label style="font-size:11px; color:var(--muted); font-weight:700; display:block; margin-bottom:4px;">DATA DE INDICAÇÃO:</label>
         <input type="date" id="historyIndicationDate" class="input-box">
@@ -448,6 +730,64 @@ footer{max-width:1320px;margin:auto;padding:0 22px 35px;color:var(--muted);font-
   </div>
 </div>
 
+<!-- Modal Especial do Diretor -->
+<div class="modal" id="modalDirectorCard" onclick="closeModalOnOutside(event, 'modalDirectorCard')">
+  <div class="dialog" style="width:650px; background:linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%); border:1px solid rgba(129, 140, 248, 0.4); border-radius:28px; box-shadow:0 25px 60px rgba(0,0,0,0.6); overflow:hidden; padding:35px;" onclick="event.stopPropagation()">
+    <button class="close" onclick="closeModal('modalDirectorCard')" style="background:rgba(255,255,255,0.08); border:none; color:#fff;">×</button>
+    <div id="directorModalContent"></div>
+  </div>
+</div>
+
+<!-- Modal: Visualização de Filmes Indicados na Categoria (Apenas Leitura) -->
+<div class="modal" id="modalCategoryDetail" onclick="closeModalOnOutside(event, 'modalCategoryDetail')">
+  <div class="dialog" style="width:550px;" onclick="event.stopPropagation()">
+    <button class="close" onclick="closeModal('modalCategoryDetail')">×</button>
+    <h3 id="modalCatTitle" style="color:var(--text); margin-top:0; margin-bottom:20px; font-size:20px; text-align:center;">Filmes Indicados</h3>
+    
+    <div id="catDetailDisplayContainer" style="display:flex; flex-direction:column; gap:14px; max-height:60vh; overflow-y:auto; padding-right:4px;">
+    </div>
+  </div>
+</div>
+
+<!-- Modal: Fav (Gerenciamento de Filmes do Membro - Ranking Gratia) -->
+<div class="modal" id="modalMemberMovies" onclick="closeModalOnOutside(event, 'modalMemberMovies')">
+  <div class="dialog" onclick="event.stopPropagation()">
+    <button class="close" onclick="closeModal('modalMemberMovies')">×</button>
+    <h2 id="modalMemberTitle" style="margin-top:0; text-transform:capitalize; color:var(--text);">Ranking Gratia De [Membro]</h2>
+    <div style="background:rgba(16,185,129,0.1); border:1px solid var(--green); padding:12px; border-radius:12px; margin-bottom:16px; display:flex; justify-content:space-between; align-items:center;">
+      <span style="font-weight:700; color:var(--text);">🏆 Média de Notas:</span>
+      <span id="memberHighestScoreDisplay" style="font-size:18px; font-weight:900; color:var(--green);">0.0</span>
+    </div>
+    
+    <div style="background:var(--bg); padding:14px; border-radius:14px; border:1px solid var(--line); margin-bottom:16px;">
+      <h4 style="margin:0 0 10px; color:var(--text);">Adicionar novo filme:</h4>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-bottom:8px;">
+        <input type="text" id="newWinTitle" class="input-box" placeholder="Título do filme">
+        <select id="newWinScore" class="input-box">
+          <option value="">Sem nota</option>
+          <option value="0.5">0.5</option>
+          <option value="1.0">1.0</option>
+          <option value="1.5">1.5</option>
+          <option value="2.0">2.0</option>
+          <option value="2.5">2.5</option>
+          <option value="3.0">3.0</option>
+          <option value="3.5">3.5</option>
+          <option value="4.0">4.0</option>
+          <option value="4.5">4.5</option>
+          <option value="5.0">5.0</option>
+        </select>
+      </div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-bottom:8px;">
+        <input type="text" id="newWinLink" class="input-box" placeholder="Link do filme (Letterboxd/Trailer)">
+        <input type="file" id="newWinThumbFile" class="file-input-custom" accept="image/*" onchange="previewMemberFile(this)">
+      </div>
+      <button class="btn btn-sm" onclick="addMemberWinMovie()">Salvar Filme</button>
+    </div>
+
+    <div id="modalMemberMoviesList" style="display:grid; gap:10px;"></div>
+  </div>
+</div>
+
 <!-- Modal: Adicionar/Editar Média do Grupo -->
 <div class="modal" id="modalGroupMovie" onclick="closeModalOnOutside(event, 'modalGroupMovie')">
   <div class="dialog" style="width:500px;" onclick="event.stopPropagation()">
@@ -472,7 +812,7 @@ footer{max-width:1320px;margin:auto;padding:0 22px 35px;color:var(--muted);font-
     <button class="close" onclick="closeModal('modalCountryMovie')">×</button>
     <h3 style="margin-top:0; color:var(--text);">Adicionar Filme por País</h3>
     <div style="display:grid; gap:10px;">
-      <input type="text" id="countryName" class="input-box" placeholder="País (ex: Brasil, França)">
+      <input type="text" id="countryName" class="input-box" placeholder="País (ex: Brasil, Alemanha, Japão)">
       <input type="text" id="countryMovieTitle" class="input-box" placeholder="Título do filme">
       <input type="text" id="countryMovieLink" class="input-box" placeholder="Link do filme (opcional)">
       <input type="file" id="countryMovieThumbFile" class="file-input-custom" accept="image/*" onchange="previewCountryFile(this)">
@@ -484,8 +824,25 @@ footer{max-width:1320px;margin:auto;padding:0 22px 35px;color:var(--muted);font-
 <footer>Gratia · Sistema interno de controle cinematográfico</footer>
 
 <script>
-const defaultMembers = ["rebeca", "rayane", "malena", "derp", "kamila", "mudsaga", "gui", "mylena"];
-const classicEmojis = ["❤️", "👍", "🔥", "😂", "😮", "😢", "👏", "🍿", "⭐", "🎉", "💯", "😍", "🤩", "🤯", "💀", "👻", "🏆", "🎯", "💡", "🚀", "👀", "👑", "🌹", "🍀", "🍷", "🍕", "🎨", "🎧", "⚡", "🌈"];
+const membersData = ["rebeca", "rayane", "malena", "derp", "kamila", "mudsaga", "gui", "mylena"];
+const classicEmojis = [
+  "❤️", "👍", "🔥", "😂", "😮", "😢", "👏", "🍿", "⭐", "🎉",
+  "💯", "😍", "🤩", "🤯", "💀", "👻", "🏆", "🎯", "💡", "🚀",
+  "👀", "👑", "🌹", "🍀", "🍷", "🍕", "🎨", "🎧", "⚡", "🌈"
+];
+
+const defaultCategories = [
+  "Filme Brasileiro", "Terror", "Igual ou acima de 4 Estrelas", "Diretor Favorito", 
+  "Filme com mais de 3hrs", "Documentário", "Cinema Independente", "Curta", 
+  "Animação", "Filme por país", "Máximo 5k de vistos", "Filme com até 90min", 
+  "Filme pela capa/poster", "Clássico que ninguém viu", "Filme com ator/atriz favorito(a)", 
+  "Romance", "Ação", "Biografia/fatos reais", "Filme Preto e Branco", 
+  "Vencedor do Oscar de Melhor Filme", "Bonito esteticamente", "Slice of life", 
+  "Cyberpunk", "Giallo", "Do ano do seu nascimento", "Futurista", 
+  "Filme por década", "Lugar que já conheceu ou quer conhecer", "Filme desconfortável", 
+  "De uma diretora", "Tema de interesse próprio", "Primeiro longa de um diretor(a)", 
+  "Evento histórico", "Lugar extremo"
+];
 
 const presetCountries = [
   "Afeganistão", "África do Sul", "Albânia", "Alemanha", "Andorra", "Angola", "Antígua e Barbuda", "Arábia Saudita", "Argélia", "Argentina", "Armênia", "Austrália", "Áustria", "Azerbaijão", "Bahamas", "Bangladesh", "Barbados", "Barém", "Bélgica", "Belize", "Benim", "Bielorrússia (Belarus)", "Bolívia", "Bósnia e Herzegovina", "Botsuana", "Brasil", "Brunei", "Bulgária", "Burquina Fasso", "Burúndi", "Butão", "Cabo Verde", "Camarões", "Camboja", "Canadá", "Catar", "Cazaquistão", "Chade", "Chile", "China", "Chipre", "Colômbia", "Comores", "Coreia do Norte", "Coreia do Sul", "Costa do Marfim", "Costa Rica", "Croácia", "Cuba", "Dinamarca", "Djibuti", "Dominica", "Egito", "El Salvador", "Emirados Árabes Unidos", "Equador", "Eritreia", "Eslováquia", "Eslovênia", "Espanha", "Estados Unidos", "Estônia", "Essuatíni (Suazilândia)", "Etiópia", "Fiji", "Filipinas", "Finlândia", "França", "Gabão", "Gâmbia", "Gana", "Geórgia", "Granada", "Grécia", "Guatemala", "Guiana", "Guiné", "Guiné-Bissau", "Guiné Equatorial", "Haiti", "Honduras", "Hungria", "Iêmen", "Ilhas Marechal", "Índia", "Indonésia", "Irã", "Iraque", "Irlanda", "Islândia", "Israel", "Itália", "Jamaica", "Japão", "Jordânia", "Kosovo", "Kuweit", "Laos", "Lesoto", "Letônia"
@@ -496,17 +853,21 @@ let votesData = JSON.parse(localStorage.getItem('gratia_votes_data') || '{}');
 let groupMovies = JSON.parse(localStorage.getItem('gratia_group_movies') || '[]');
 let historyMovies = JSON.parse(localStorage.getItem('gratia_history_movies') || '[]');
 let countryMovies = JSON.parse(localStorage.getItem('gratia_country_movies') || '[]');
+let categoryState = JSON.parse(localStorage.getItem('gratia_category_state') || '{}');
+let roundsState = JSON.parse(localStorage.getItem('gratia_rounds_state') || '{}');
 let directorsState = JSON.parse(localStorage.getItem('gratia_directors_state') || '{}');
 let heroState = JSON.parse(localStorage.getItem('gratia_hero_state') || '{"bg":"", "icon":""}');
 let currentTheme = localStorage.getItem('gratia_theme') || 'dark';
-let currentUser = localStorage.getItem('gratia_current_user') || 'rebeca';
 let selectedCountryFilter = 'all';
 
+let activeRoundBlock = 1;
+let activeRoundNum = 1;
+
+let activeMemberModal = null;
+let activeCategoryModalIdx = null;
 let activeHistoryMovieIdx = null;
 
-let tempProfileAvatarBase64 = "";
-let tempProfileBannerBase64 = "";
-let tempProfileFavThumbBase64 = "";
+let tempMemberThumbBase64 = "";
 let tempGroupMovieThumbBase64 = "";
 let tempHistoryThumbBase64 = "";
 let tempCountryThumbBase64 = "";
@@ -517,10 +878,11 @@ function saveData() {
   localStorage.setItem('gratia_group_movies', JSON.stringify(groupMovies));
   localStorage.setItem('gratia_history_movies', JSON.stringify(historyMovies));
   localStorage.setItem('gratia_country_movies', JSON.stringify(countryMovies));
+  localStorage.setItem('gratia_category_state', JSON.stringify(categoryState));
+  localStorage.setItem('gratia_rounds_state', JSON.stringify(roundsState));
   localStorage.setItem('gratia_directors_state', JSON.stringify(directorsState));
   localStorage.setItem('gratia_hero_state', JSON.stringify(heroState));
   localStorage.setItem('gratia_theme', currentTheme);
-  localStorage.setItem('gratia_current_user', currentUser);
 }
 
 function toggleTheme() {
@@ -549,6 +911,8 @@ function switchTab(tabId) {
   if(tabId === 'history') renderHistoryMovies();
   if(tabId === 'directors') renderDirectorsTab();
   if(tabId === 'year') renderYearTab();
+  if(tabId === 'list') renderCategoriesList();
+  if(tabId === 'rounds') renderRoundsSystem();
   if(tabId === 'countries') renderCountryMovies();
 }
 
@@ -556,8 +920,12 @@ function initHeroCustomization() {
   applyTheme();
   const heroSection = document.getElementById('heroSection');
   const heroIconImg = document.getElementById('heroIconImg');
-  if(heroState.bg) heroSection.style.backgroundImage = `url('${heroState.bg}')`;
-  if(heroState.icon) heroIconImg.src = heroState.icon;
+  if(heroState.bg) {
+    heroSection.style.backgroundImage = `url('${heroState.bg}')`;
+  }
+  if(heroState.icon) {
+    heroIconImg.src = heroState.icon;
+  }
 }
 
 function updateHeroBackground(event) {
@@ -586,156 +954,240 @@ function updateHeroIcon(event) {
   }
 }
 
-// ----------------- SISTEMA DE LOGIN & PERFIL -----------------
-function updateActiveUserBadge() {
-  const st = memberState[currentUser] || { name: currentUser, avatar: "" };
-  const displayName = st.name || currentUser;
-  const avatarImg = st.avatar || `https://via.placeholder.com/30/334155/fff?text=${displayName[0].toUpperCase()}`;
+function getCategoryMovies(categoryIdx) {
+  const catName = defaultCategories[categoryIdx];
+  const itemState = categoryState[categoryIdx] || { movies: [] };
   
-  document.getElementById('topbarUserAvatar').src = avatarImg;
-  document.getElementById('topbarUserName').textContent = displayName;
-}
+  const historyMatches = historyMovies.filter(m => m.categoryName === catName).map(m => ({
+    title: m.title,
+    indicatedBy: m.indicatedBy,
+    thumb: m.thumb
+  }));
 
-function openProfileModal() {
-  const select = document.getElementById('activeUserSelect');
-  select.innerHTML = defaultMembers.map(m => `
-    <option value="${m}" ${m === currentUser ? 'selected' : ''}>${(memberState[m] && memberState[m].name) ? memberState[m].name : (m.charAt(0).toUpperCase() + m.slice(1))}</option>
-  `).join('');
-
-  loadProfileFields(currentUser);
-  document.getElementById('modalUserProfile').classList.add('open');
-}
-
-function changeCurrentUser(newMemberKey) {
-  currentUser = newMemberKey;
-  saveData();
-  updateActiveUserBadge();
-  loadProfileFields(newMemberKey);
-}
-
-function loadProfileFields(memberKey) {
-  const st = memberState[memberKey] || { name: memberKey, bio: "", link: "", avatar: "", banner: "", favMovie: { title: "", link: "", thumb: "" } };
-  
-  document.getElementById('profileName').value = st.name || memberKey;
-  document.getElementById('profileBio').value = st.bio || '';
-  document.getElementById('profileLink').value = st.link || '';
-
-  const fav = st.favMovie || { title: "", link: "", thumb: "" };
-  document.getElementById('profileFavTitle').value = fav.title || '';
-  document.getElementById('profileFavLink').value = fav.link || '';
-
-  tempProfileAvatarBase64 = st.avatar || "";
-  tempProfileBannerBase64 = st.banner || "";
-  tempProfileFavThumbBase64 = fav.thumb || "";
-
-  document.getElementById('profileAvatarFile').value = "";
-  document.getElementById('profileBannerFile').value = "";
-  document.getElementById('profileFavThumbFile').value = "";
-}
-
-function previewProfileAvatar(input) {
-  const file = input.files[0];
-  if(file) {
-    const reader = new FileReader();
-    reader.onload = e => tempProfileAvatarBase64 = e.target.result;
-    reader.readAsDataURL(file);
+  let stateMovies = itemState.movies || [];
+  if (stateMovies.length === 0 && (itemState.movie || itemState.indicatedBy || itemState.thumb)) {
+    stateMovies = [{ title: itemState.movie, indicatedBy: itemState.indicatedBy, thumb: itemState.thumb }];
   }
-}
 
-function previewProfileBanner(input) {
-  const file = input.files[0];
-  if(file) {
-    const reader = new FileReader();
-    reader.onload = e => tempProfileBannerBase64 = e.target.result;
-    reader.readAsDataURL(file);
-  }
-}
-
-function previewProfileFavThumb(input) {
-  const file = input.files[0];
-  if(file) {
-    const reader = new FileReader();
-    reader.onload = e => tempProfileFavThumbBase64 = e.target.result;
-    reader.readAsDataURL(file);
-  }
-}
-
-function saveUserProfile() {
-  const name = document.getElementById('profileName').value.trim() || currentUser;
-  const bio = document.getElementById('profileBio').value.trim();
-  const link = document.getElementById('profileLink').value.trim();
-  const favTitle = document.getElementById('profileFavTitle').value.trim();
-  const favLink = document.getElementById('profileFavLink').value.trim();
-
-  if(!memberState[currentUser]) memberState[currentUser] = {};
-  
-  memberState[currentUser] = {
-    ...memberState[currentUser],
-    name,
-    bio,
-    link,
-    avatar: tempProfileAvatarBase64,
-    banner: tempProfileBannerBase64,
-    favMovie: {
-      title: favTitle,
-      link: favLink,
-      thumb: tempProfileFavThumbBase64
+  const combined = [...historyMatches];
+  stateMovies.forEach(sm => {
+    if (sm.title && !combined.some(cm => cm.title.toLowerCase() === sm.title.toLowerCase())) {
+      combined.push(sm);
     }
-  };
+  });
 
-  saveData();
-  updateActiveUserBadge();
-  renderMembers();
-  renderVotesRank();
-  closeModal('modalUserProfile');
+  return combined;
 }
 
-// ----------------- MEMBROS & CARDS -----------------
+// ----------------- MEMBROS -----------------
 function renderMembers() {
   const grid = document.getElementById('membersGrid');
-  grid.innerHTML = defaultMembers.map(key => {
-    const st = memberState[key] || { name: key, bio: "", link: "", avatar: "", banner: "", favMovie: { title: "", link: "", thumb: "" } };
-    const bannerStyle = st.banner ? `background-image: url('${st.banner}');` : '';
-    const displayName = st.name || key;
-    const fav = st.favMovie || { title: "", link: "", thumb: "" };
+  grid.innerHTML = membersData.map(name => {
+    const st = memberState[name] || { bio: "", link: "", avatar: "", banner: "", wins: [] };
+    let allWins = [...(st.wins || [])];
+    
+    allWins.sort((a, b) => {
+      const scoreA = a.score === "" ? -1 : parseFloat(a.score);
+      const scoreB = b.score === "" ? -1 : parseFloat(b.score);
+      return scoreB - scoreA;
+    });
 
-    let favHtml = '';
-    if(fav.title) {
-      favHtml = `
-        <div style="background:var(--bg); border:1px solid var(--line); border-radius:12px; padding:10px; display:flex; gap:12px; align-items:center; margin-top:6px;">
-          <img src="${fav.thumb || 'https://via.placeholder.com/55x75/1e293b/fff?text=Fav'}" style="width:50px; height:70px; object-fit:cover; border-radius:6px; background:var(--dark); flex-shrink:0;" alt="Poster">
+    let validScores = allWins.map(w => parseFloat(w.score)).filter(s => !isNaN(s));
+    let averageScore = validScores.length > 0 ? (validScores.reduce((acc, curr) => acc + curr, 0) / validScores.length) : 0;
+
+    let topWins = allWins.slice(0, 4);
+    const bannerStyle = st.banner ? `background-image: url('${st.banner}');` : '';
+
+    let winsHtml = '';
+    if(topWins.length === 0) {
+      winsHtml = `<div style="font-size:12px; color:var(--muted); text-align:center; padding:8px; background:var(--bg); border-radius:8px;">Nenhum filme no Ranking Gratia.</div>`;
+    } else {
+      winsHtml = topWins.map((w, idx) => `
+        <div style="background:var(--bg); border:1px solid var(--line); border-radius:10px; padding:10px; display:flex; gap:12px; align-items:center;">
+          <div style="font-size:14px; font-weight:900; color:var(--primary2);">#${idx + 1}</div>
+          <img src="${w.thumb || 'https://via.placeholder.com/55x75/1e293b/fff?text=Fav'}" style="width:55px; height:75px; object-fit:contain; border-radius:6px; background:var(--dark); flex-shrink:0;" alt="Poster">
           <div style="flex:1; overflow:hidden;">
-            <span style="font-size:10px; color:var(--primary2); font-weight:800; text-transform:uppercase; display:block;">Filme Favorito</span>
-            <div style="font-size:13px; font-weight:800; color:var(--text); white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">${fav.title}</div>
-            ${fav.link ? `<a href="${fav.link}" target="_blank" style="font-size:11px; color:var(--green); text-decoration:none; font-weight:700;">🔗 Ver no Letterboxd</a>` : ''}
+            <div style="font-size:14px; font-weight:700; color:var(--text); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; margin-bottom:2px;">${w.title}</div>
+            <div style="font-size:12px; color:var(--muted); margin-bottom:4px;">Nota: <strong style="color:var(--green);">${w.score || 'Sem nota'}</strong></div>
+            ${w.link ? `<a href="${w.link}" target="_blank" style="font-size:11px; color:var(--primary2); text-decoration:none;">🔗 Link</a>` : ''}
           </div>
         </div>
-      `;
+      `).join('');
     }
 
     return `
       <div class="card">
         <div class="member-header" style="${bannerStyle}">
+          <label class="member-banner-btn" title="Alterar foto de fundo (capa)">
+            🖼️
+            <input type="file" class="member-banner-input" accept="image/*" onchange="updateBanner(event, '${name}')">
+          </label>
           <div class="member-avatar-wrap">
-            <img src="${st.avatar || 'https://via.placeholder.com/90/334155/fff?text=' + displayName[0].toUpperCase()}" class="member-avatar" alt="${displayName}">
+            <img src="${st.avatar || 'https://via.placeholder.com/90/334155/fff?text=' + name[0].toUpperCase()}" class="member-avatar" id="avatar-${name}" alt="${name}">
+            <label class="member-avatar-btn" title="Alterar foto de perfil">
+              <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDAP////////////////////////////////////////////////////////////////////////////////------wgALCAABAAEBAREA/8QAFBABAAAAAAAAAAAAAAAAAAAAAP/aAAgBAQABPxA=" alt="Ícone">
+              <input type="file" class="member-avatar-input" accept="image/*" onchange="updateAvatar(event, '${name}')">
+            </label>
           </div>
-          <h3 class="member-name">${displayName}</h3>
+          <h3 class="member-name">${name}</h3>
+          <div style="font-size:12px; color:var(--green); font-weight:800;">Média de Notas: ${averageScore > 0 ? averageScore.toFixed(1) : 'N/A'}</div>
         </div>
         <div class="member-body">
-          <div style="font-size:12px; color:var(--muted); line-height:1.4;">${st.bio || 'Sem mini bio cadastrada.'}</div>
-          ${st.link ? `<a href="${st.link}" target="_blank" style="font-size:12px; color:var(--primary2); text-decoration:none; font-weight:700;">🔗 Perfil Letterboxd</a>` : ''}
-          ${favHtml}
+          <label style="font-size:11px; color:var(--muted); font-weight:700">MINI BIO / ESTILO:</label>
+          <textarea class="input-box" rows="2" onchange="updateMemberField('${name}', 'bio', this.value)">${st.bio || ''}</textarea>
+          
+          <label style="font-size:11px; color:var(--muted); font-weight:700">LINK LETTERBOXD:</label>
+          <input type="text" class="input-box" value="${st.link || ''}" onchange="updateMemberField('${name}', 'link', this.value)" placeholder="https://letterboxd.com/...">
+          
+          <div style="margin-top:4px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+              <span style="font-size:11px; color:var(--muted); font-weight:700;">RANKING GRATIA:</span>
+              <button class="btn btn-sm" style="height:26px; padding:0 8px; font-size:11px;" onclick="openMemberWinsModal('${name}')">Gerenciar Ranking</button>
+            </div>
+            <div style="display:flex; flex-direction:column; gap:6px;">
+              ${winsHtml}
+            </div>
+          </div>
         </div>
       </div>
     `;
   }).join('');
 }
 
+function updateMemberField(name, field, val) {
+  if(!memberState[name]) memberState[name] = { bio: "", link: "", avatar: "", banner: "", wins: [] };
+  memberState[name][field] = val;
+  saveData();
+}
+
+function updateAvatar(event, name) {
+  const file = event.target.files[0];
+  if(file) {
+    const reader = new FileReader();
+    reader.onload = function(e) {
+      if(!memberState[name]) memberState[name] = { bio: "", link: "", avatar: "", banner: "", wins: [] };
+      memberState[name].avatar = e.target.result;
+      saveData();
+      renderMembers();
+      renderVotesRank();
+    }
+    reader.readAsDataURL(file);
+  }
+}
+
+function updateBanner(event, name) {
+  const file = event.target.files[0];
+  if(file) {
+    const reader = new FileReader();
+    reader.onload = function(e) {
+      if(!memberState[name]) memberState[name] = { bio: "", link: "", avatar: "", banner: "", wins: [] };
+      memberState[name].banner = e.target.result;
+      saveData();
+      renderMembers();
+    }
+    reader.readAsDataURL(file);
+  }
+}
+
+function openMemberWinsModal(name) {
+  activeMemberModal = name;
+  document.getElementById('modalMemberTitle').textContent = `Ranking Gratia De ${name.charAt(0).toUpperCase() + name.slice(1)}`;
+  tempMemberThumbBase64 = "";
+  document.getElementById('newWinThumbFile').value = "";
+  renderMemberWinsList();
+  document.getElementById('modalMemberMovies').classList.add('open');
+}
+
+function previewMemberFile(input) {
+  const file = input.files[0];
+  if(file) {
+    const reader = new FileReader();
+    reader.onload = function(e) {
+      tempMemberThumbBase64 = e.target.result;
+    }
+    reader.readAsDataURL(file);
+  }
+}
+
+function renderMemberWinsList() {
+  const name = activeMemberModal;
+  const st = memberState[name] || { wins: [] };
+  let wins = st.wins || [];
+
+  wins.sort((a, b) => {
+    const scoreA = a.score === "" ? -1 : parseFloat(a.score);
+    const scoreB = b.score === "" ? -1 : parseFloat(b.score);
+    return scoreB - scoreA;
+  });
+
+  let validScores = wins.map(w => parseFloat(w.score)).filter(s => !isNaN(s));
+  let averageScore = validScores.length > 0 ? (validScores.reduce((acc, curr) => acc + curr, 0) / validScores.length) : 0;
+  document.getElementById('memberHighestScoreDisplay').textContent = averageScore > 0 ? averageScore.toFixed(1) : '0.0';
+
+  const listContainer = document.getElementById('modalMemberMoviesList');
+  if(wins.length === 0) {
+    listContainer.innerHTML = `<p style="color:var(--muted); text-align:center;">Nenhum filme cadastrado para ${name}.</p>`;
+    return;
+  }
+
+  listContainer.innerHTML = wins.map((w, idx) => {
+    const realIdx = st.wins.indexOf(w);
+    return `
+      <div class="movie-grid-card">
+        <div style="font-size:16px; font-weight:900; color:var(--primary2); min-width:30px; text-align:center;">#${idx + 1}</div>
+        <img src="${w.thumb || 'https://via.placeholder.com/100x140/1e293b/fff?text=Filme'}" class="movie-thumb" alt="Pôster">
+        <div style="flex:1;">
+          <h4 style="margin:0 0 4px; color:var(--text); font-size:16px;">${w.title}</h4>
+          <div style="font-size:13px; color:var(--muted); margin-bottom:8px;">Nota: <strong style="color:var(--green);">${w.score || 'Sem nota'}</strong></div>
+          ${w.link ? `<a href="${w.link}" target="_blank" style="font-size:12px; color:var(--primary2); text-decoration:none;">🔗 Acessar Link do Filme</a>` : ''}
+        </div>
+        <button class="btn btn-sm btn-danger" onclick="deleteMemberWin(${realIdx})">Excluir</button>
+      </div>
+    `;
+  }).join('');
+}
+
+function addMemberWinMovie() {
+  const name = activeMemberModal;
+  const title = document.getElementById('newWinTitle').value.trim();
+  const score = document.getElementById('newWinScore').value;
+  const link = document.getElementById('newWinLink').value.trim();
+  const thumb = tempMemberThumbBase64;
+
+  if(!title) {
+    alert('Insira pelo menos o título do filme.');
+    return;
+  }
+
+  if(!memberState[name]) memberState[name] = { bio: "", link: "", avatar: "", banner: "", wins: [] };
+  if(!memberState[name].wins) memberState[name].wins = [];
+
+  memberState[name].wins.push({ title, score, link, thumb });
+  saveData();
+
+  document.getElementById('newWinTitle').value = '';
+  document.getElementById('newWinScore').value = '';
+  document.getElementById('newWinLink').value = '';
+  document.getElementById('newWinThumbFile').value = '';
+  tempMemberThumbBase64 = "";
+
+  renderMemberWinsList();
+  renderMembers();
+}
+
+function deleteMemberWin(realIdx) {
+  const name = activeMemberModal;
+  memberState[name].wins.splice(realIdx, 1);
+  saveData();
+  renderMemberWinsList();
+  renderMembers();
+}
+
 // ----------------- RANKING DE VOTAÇÕES -----------------
 function renderVotesRank() {
   const tbody = document.getElementById('votesRankBody');
   
-  const sortedMembers = [...defaultMembers].sort((a, b) => {
+  const sortedMembers = [...membersData].sort((a, b) => {
     const countA = votesData[a] || 0;
     const countB = votesData[b] || 0;
     return countB - countA;
@@ -743,36 +1195,66 @@ function renderVotesRank() {
 
   const totalMembers = sortedMembers.length;
 
-  tbody.innerHTML = sortedMembers.map((key, index) => {
-    const winsCount = votesData[key] || 0;
-    const st = memberState[key] || { name: key, avatar: "" };
-    const displayName = st.name || key;
-    const avatarImg = st.avatar || `https://via.placeholder.com/45/334155/fff?text=${displayName[0].toUpperCase()}`;
+  tbody.innerHTML = sortedMembers.map((name, index) => {
+    const winsCount = votesData[name] || 0;
+    const st = memberState[name] || { avatar: "" };
+    const avatarImg = st.avatar || `https://via.placeholder.com/45/334155/fff?text=${name[0].toUpperCase()}`;
     
     let positionText = `${index + 1}.`;
-    if(index === 0) positionText = '👑 🥇 1º';
-    else if(index === 1) positionText = '🥈 2º';
-    else if(index === 2) positionText = '🥉 3º';
+    if(index === 0) { positionText = '👑 🥇 1º'; }
+    else if(index === 1) { positionText = '🥈 2º'; }
+    else if(index === 2) { positionText = '🥉 3º'; }
+
+    const isPodium = index < 3;
+    const isRelegation = index >= totalMembers - 3;
+    
+    let rowClass = '';
+    if (isPodium) rowClass = 'row-podium';
+    if (isRelegation) rowClass = 'row-relegation';
+
+    const isLast = index === totalMembers - 1;
+    const sadEmoji = isLast ? ' 😢' : '';
 
     return `
-      <tr class="${index < 3 ? 'row-podium' : (index >= totalMembers - 3 ? 'row-relegation' : '')}">
+      <tr class="${rowClass}">
         <td><strong>${positionText}</strong></td>
         <td>
           <div style="display:flex; align-items:center; gap:12px;">
-            <img src="${avatarImg}" style="width:40px; height:40px; border-radius:50%; object-fit:cover; border:2px solid var(--primary); background:#334155;" alt="${displayName}">
-            <span style="text-transform:capitalize; font-weight:700; color:var(--text); font-size:15px;">${displayName}</span>
+            <div style="position:relative; width:45px; height:45px; flex-shrink:0;">
+              <img src="${avatarImg}" style="width:45px; height:45px; border-radius:50%; object-fit:cover; border:2px solid var(--primary); background:#334155;" alt="${name}">
+              <label style="position:absolute; bottom:-2px; right:-2px; background:var(--primary); width:20px; height:20px; border-radius:50%; display:grid; place-items:center; cursor:pointer; overflow:hidden; border:2px solid var(--panel);" title="Alterar foto">
+                <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDAP////////////////////////////////////////////////////////////////////////////////------wgALCAABAAEBAREA/8QAFBABAAAAAAAAAAAAAAAAAAAAAP/aAAgBAQABPxA=" alt="Ícone" style="width:100%; height:100%; object-fit:cover;">
+                <input type="file" style="display:none;" accept="image/*" onchange="updateAvatarFromRank(event, '${name}')">
+              </label>
+            </div>
+            <span style="text-transform:capitalize; font-weight:700; color:var(--text); font-size:16px;">${name}${sadEmoji}</span>
           </div>
         </td>
         <td>
-          <input type="number" class="input-box" style="width:120px; text-align:center; font-weight:800;" value="${winsCount === 0 ? '' : winsCount}" oninput="updateVoteCount('${key}', this.value)" placeholder="0">
+          <input type="number" class="input-box" style="width:120px; text-align:center; font-weight:800;" value="${winsCount === 0 ? '' : winsCount}" oninput="updateVoteCount('${name}', this.value)" placeholder="0">
         </td>
       </tr>
     `;
   }).join('');
 }
 
-function updateVoteCount(key, val) {
-  votesData[key] = val === '' ? 0 : parseInt(val) || 0;
+function updateAvatarFromRank(event, name) {
+  const file = event.target.files[0];
+  if(file) {
+    const reader = new FileReader();
+    reader.onload = function(e) {
+      if(!memberState[name]) memberState[name] = { bio: "", link: "", avatar: "", banner: "", wins: [] };
+      memberState[name].avatar = e.target.result;
+      saveData();
+      renderVotesRank();
+      renderMembers();
+    }
+    reader.readAsDataURL(file);
+  }
+}
+
+function updateVoteCount(name, val) {
+  votesData[name] = val === '' ? 0 : parseInt(val) || 0;
   saveData();
   renderVotesRank();
 }
@@ -791,8 +1273,8 @@ function renderMoviesRank() {
     <tr>
       <td>
         <div style="display:flex; align-items:center; gap:16px;">
-          <img src="${m.thumb || 'https://via.placeholder.com/70x95/1e293b/fff?text=Filme'}" style="width:50px; height:70px; object-fit:cover; border-radius:6px; background:var(--dark);" alt="Pôster">
-          <strong style="color:var(--text); font-size:15px;">${m.title}</strong>
+          <img src="${m.thumb || 'https://via.placeholder.com/70x95/1e293b/fff?text=Filme'}" class="table-movie-thumb" alt="Pôster">
+          <strong style="color:var(--text); font-size:16px;">${m.title}</strong>
         </div>
       </td>
       <td style="text-transform:capitalize;">${m.winner}</td>
@@ -804,7 +1286,7 @@ function renderMoviesRank() {
 
 function openAddMovieModel() {
   document.getElementById('groupMovieTitle').value = '';
-  document.getElementById('groupMovieWinner').value = (memberState[currentUser] && memberState[currentUser].name) ? memberState[currentUser].name : currentUser;
+  document.getElementById('groupMovieWinner').value = '';
   document.getElementById('groupMovieScore').value = '';
   document.getElementById('groupMovieThumbFile').value = '';
   tempGroupMovieThumbBase64 = "";
@@ -815,7 +1297,9 @@ function previewGroupMovieFile(input) {
   const file = input.files[0];
   if(file) {
     const reader = new FileReader();
-    reader.onload = e => tempGroupMovieThumbBase64 = e.target.result;
+    reader.onload = function(e) {
+      tempGroupMovieThumbBase64 = e.target.result;
+    }
     reader.readAsDataURL(file);
   }
 }
@@ -844,7 +1328,10 @@ function deleteGroupMovie(idx) {
 function formatDateDisplay(dateStr) {
   if(!dateStr) return 'Não informada';
   const parts = dateStr.split('-');
-  return parts.length === 3 ? `${parts[2]}/${parts[1]}/${parts[0]}` : dateStr;
+  if(parts.length === 3) {
+    return `${parts[2]}/${parts[1]}/${parts[0]}`;
+  }
+  return dateStr;
 }
 
 function renderStreamIcons(streamsStr) {
@@ -858,8 +1345,13 @@ function renderStreamIcons(streamsStr) {
   if(text.includes('max') || text.includes('hbo')) icons.push('<span title="Max" style="background:#002BE7; color:#fff; padding:3px 8px; border-radius:6px; font-size:11px; font-weight:800;">MAX</span>');
   if(text.includes('disney')) icons.push('<span title="Disney+" style="background:#113CCF; color:#fff; padding:3px 8px; border-radius:6px; font-size:11px; font-weight:800;">Disney+</span>');
   if(text.includes('apple') || text.includes('tv+')) icons.push('<span title="Apple TV+" style="background:#555; color:#fff; padding:3px 8px; border-radius:6px; font-size:11px; font-weight:800;">Apple TV+</span>');
+  if(text.includes('paramount')) icons.push('<span title="Paramount+" style="background:#0064FF; color:#fff; padding:3px 8px; border-radius:6px; font-size:11px; font-weight:800;">Paramount+</span>');
+  if(text.includes('globoplay') || text.includes('globo')) icons.push('<span title="Globoplay" style="background:#C4171C; color:#fff; padding:3px 8px; border-radius:6px; font-size:11px; font-weight:800;">Globoplay</span>');
 
-  return icons.length > 0 ? `<div style="display:flex; gap:6px; flex-wrap:wrap; align-items:center;">${icons.join('')}</div>` : `<span style="font-size:12px; color:var(--text); font-weight:700;">📺 ${streamsStr}</span>`;
+  if(icons.length === 0) {
+    return `<span style="font-size:12px; color:var(--text); font-weight:700;">📺 ${streamsStr}</span>`;
+  }
+  return `<div style="display:flex; gap:6px; flex-wrap:wrap; align-items:center;">${icons.join('')}</div>`;
 }
 
 function renderHistoryMovies() {
@@ -875,14 +1367,16 @@ function renderHistoryMovies() {
     let reactionSummary = '';
     if(m.reactions && m.reactions.length > 0) {
       const counts = {};
-      m.reactions.forEach(r => { counts[r.emoji] = (counts[r.emoji] || 0) + 1; });
+      m.reactions.forEach(r => {
+        counts[r.emoji] = (counts[r.emoji] || 0) + 1;
+      });
       reactionSummary = Object.keys(counts).map(emoji => `
-        <span style="background:var(--bg); border:1px solid var(--line); padding:3px 8px; border-radius:12px; font-size:12px; display:inline-flex; align-items:center; gap:4px; margin-right:4px;">
+        <span style="background:var(--bg); border:1px solid var(--line); padding:3px 8px; border-radius:12px; font-size:12px; display:inline-flex; align-items:center; gap:4px; margin-right:4px; margin-bottom:4px;">
           ${emoji} <strong style="color:var(--primary2);">${counts[emoji]}</strong>
         </span>
       `).join('');
     } else {
-      reactionSummary = `<span style="font-size:11px; color:var(--muted);">Sem reações</span>`;
+      reactionSummary = `<span style="font-size:11px; color:var(--muted);">Sem reações ainda</span>`;
     }
 
     return `
@@ -890,10 +1384,10 @@ function renderHistoryMovies() {
         <td style="font-weight:900; color:var(--primary2); font-size:15px;" onclick="openHistoryDetailCard(${idx})">#${idx + 1}</td>
         <td onclick="openHistoryDetailCard(${idx})">
           <div style="display:flex; align-items:flex-start; gap:16px;">
-            <img src="${m.thumb || 'https://via.placeholder.com/70x95/1e293b/fff?text=Pôster'}" style="width:80px; height:110px; object-fit:cover; border-radius:8px; background:var(--dark); flex-shrink:0;" alt="Pôster">
+            <img src="${m.thumb || 'https://via.placeholder.com/70x95/1e293b/fff?text=Pôster'}" class="table-movie-thumb" alt="Pôster" style="width:80px; height:110px; object-fit:cover; border-radius:8px; background:var(--dark); flex-shrink:0;">
             <div style="flex:1;">
               <strong style="color:var(--text); font-size:17px; display:block; margin-bottom:4px;">${m.title}</strong>
-              <div style="font-size:12px; color:var(--muted); margin-bottom:8px;">Diretor: <strong>${m.director || 'Não informado'}</strong> | Ano: <strong>${m.year || 'Não informado'}</strong></div>
+              <div style="font-size:12px; color:var(--muted); margin-bottom:8px;">Diretor: <strong>${m.director && m.director !== 'undefined' ? m.director : 'Não informado'}</strong> | Ano: <strong>${m.year && m.year !== 'undefined' ? m.year : 'Não informado'}</strong></div>
               <div style="font-size:12px; color:var(--text); display:flex; align-items:center; gap:8px; margin-bottom:8px;">
                 <span style="color:var(--muted); font-weight:700;">Streams:</span> ${streamsHtml}
               </div>
@@ -902,10 +1396,12 @@ function renderHistoryMovies() {
                 ${reactionSummary}
                 <div style="position:relative; display:inline-block; margin-left:4px;">
                   <button class="btn btn-sm" style="height:24px; padding:0 8px; font-size:11px; background:var(--primary);" onclick="toggleReactionPicker(${idx})">➕ Reagir</button>
-                  <div id="picker-${idx}" style="display:none; position:absolute; bottom:110%; left:0; background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:10px; box-shadow:0 10px 25px rgba(0,0,0,0.4); z-index:999; width:260px; flex-direction:column; gap:8px;">
-                    <div style="font-size:11px; color:var(--muted); font-weight:800;">REAGIR COMO: <strong style="color:var(--primary2); text-transform:capitalize;">${(memberState[currentUser] && memberState[currentUser].name) ? memberState[currentUser].name : currentUser}</strong></div>
+                  <div id="picker-${idx}" style="display:none; position:absolute; bottom:110%; left:0; background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:10px; box-shadow:0 10px 25px rgba(0,0,0,0.4); z-index:30; width:260px; flex-direction:column; gap:8px;">
+                    <select id="quickMember-${idx}" class="input-box" style="font-size:12px; padding:6px;">
+                      ${membersData.map(mem => `<option value="${mem}">${mem.charAt(0).toUpperCase() + mem.slice(1)}</option>`).join('')}
+                    </select>
                     <div style="display:grid; grid-template-columns: repeat(5, 1fr); gap:6px; max-height:160px; overflow-y:auto; padding:2px;">
-                      ${classicEmojis.map(emoji => `<button type="button" class="btn btn-sm" style="background:var(--bg); border:1px solid var(--line); font-size:18px; height:34px; width:100%; padding:0; display:grid; place-items:center;" onclick="toggleReaction(${idx}, '${emoji}')">${emoji}</button>`).join('')}
+                      ${classicEmojis.map(emoji => `<button type="button" class="btn btn-sm" style="background:var(--bg); border:1px solid var(--line); font-size:18px; height:34px; width:100%; padding:0; display:grid; place-items:center;" onclick="toggleReaction(${idx}, '${emoji}')" title="Reagir/Remover ${emoji}">${emoji}</button>`).join('')}
                     </div>
                   </div>
                 </div>
@@ -925,16 +1421,21 @@ function toggleReactionPicker(idx) {
   document.querySelectorAll('[id^="picker-"]').forEach(el => {
     if(el.id !== `picker-${idx}`) el.style.display = 'none';
   });
+
   const picker = document.getElementById(`picker-${idx}`);
-  if(picker) picker.style.display = picker.style.display === 'flex' ? 'none' : 'flex';
+  if(picker) {
+    picker.style.display = picker.style.display === 'flex' ? 'none' : 'flex';
+  }
 }
 
 function toggleReaction(idx, emoji) {
-  const memberName = (memberState[currentUser] && memberState[currentUser].name) ? memberState[currentUser].name : currentUser;
+  const memberSelect = document.getElementById(`quickMember-${idx}`);
+  const memberName = memberSelect ? memberSelect.value : membersData[0];
+  
   const m = historyMovies[idx];
   if(!m.reactions) m.reactions = [];
 
-  const existingIndex = m.reactions.findIndex(r => r.memberName.toLowerCase() === memberName.toLowerCase());
+  const existingIndex = m.reactions.findIndex(r => r.memberName === memberName);
 
   if(existingIndex !== -1) {
     if(m.reactions[existingIndex].emoji === emoji) {
@@ -956,11 +1457,15 @@ function openAddHistoryModal() {
   document.getElementById('historyYear').value = '';
   document.getElementById('historySynopsis').value = '';
   document.getElementById('historyStreams').value = '';
+  document.getElementById('historyIndicatedBy').value = '';
   document.getElementById('historyCountry').value = '';
   document.getElementById('historyIndicationDate').value = '';
   document.getElementById('historyWatchedDate').value = '';
   document.getElementById('historyThumbFile').value = '';
   tempHistoryThumbBase64 = "";
+
+  const catSelect = document.getElementById('historyCategorySelect');
+  catSelect.innerHTML = `<option value="">Selecione a categoria</option>` + defaultCategories.map((cat, idx) => `<option value="${idx}">${cat}</option>`).join('');
 
   document.getElementById('modalHistoryMovie').classList.add('open');
 }
@@ -969,7 +1474,9 @@ function previewHistoryFile(input) {
   const file = input.files[0];
   if(file) {
     const reader = new FileReader();
-    reader.onload = e => tempHistoryThumbBase64 = e.target.result;
+    reader.onload = function(e) {
+      tempHistoryThumbBase64 = e.target.result;
+    }
     reader.readAsDataURL(file);
   }
 }
@@ -980,12 +1487,16 @@ function saveHistoryMovie() {
   const year = document.getElementById('historyYear').value.trim();
   const synopsis = document.getElementById('historySynopsis').value.trim();
   const streams = document.getElementById('historyStreams').value.trim();
+  const indicatedBy = document.getElementById('historyIndicatedBy').value.trim();
   const country = document.getElementById('historyCountry').value.trim();
+  const categoryIdx = document.getElementById('historyCategorySelect').value;
   const indicationDate = document.getElementById('historyIndicationDate').value;
   const watchedDate = document.getElementById('historyWatchedDate').value;
   const thumb = tempHistoryThumbBase64;
 
   if(!title) return alert('Insira o título do filme.');
+
+  const categoryName = categoryIdx !== "" ? defaultCategories[categoryIdx] : "";
 
   historyMovies.push({
     title,
@@ -993,12 +1504,22 @@ function saveHistoryMovie() {
     year: year || 'Não informado',
     synopsis: synopsis || 'Sem sinopse cadastrada.',
     streams: streams || 'Não informado',
+    indicatedBy,
     country,
+    categoryName,
     indicationDate,
     watchedDate,
     thumb,
     reactions: []
   });
+
+  if(categoryIdx !== "") {
+    if(!categoryState[categoryIdx]) categoryState[categoryIdx] = { checked: false, mode: "votacao", movies: [] };
+    if(!categoryState[categoryIdx].movies) categoryState[categoryIdx].movies = [];
+    
+    categoryState[categoryIdx].checked = true;
+    categoryState[categoryIdx].movies.push({ title, indicatedBy, thumb });
+  }
 
   if(country !== "") {
     countryMovies.push({ country: formatCountryName(country), title, link: "", thumb });
@@ -1007,53 +1528,176 @@ function saveHistoryMovie() {
   saveData();
   closeModal('modalHistoryMovie');
   renderHistoryMovies();
+  renderCategoriesList();
   renderCountryMovies();
   renderDirectorsTab();
   renderYearTab();
 }
 
 function deleteHistoryMovie(idx) {
+  const removedMovie = historyMovies[idx];
   historyMovies.splice(idx, 1);
+  
+  if(removedMovie && removedMovie.categoryName) {
+    const catIdx = defaultCategories.indexOf(removedMovie.categoryName);
+    if(catIdx !== -1 && categoryState[catIdx] && categoryState[catIdx].movies) {
+      categoryState[catIdx].movies = categoryState[catIdx].movies.filter(m => m.title !== removedMovie.title);
+      if(categoryState[catIdx].movies.length === 0) {
+        categoryState[catIdx].checked = false;
+      }
+    }
+  }
+
   saveData();
   renderHistoryMovies();
+  renderCategoriesList();
   renderDirectorsTab();
   renderYearTab();
 }
 
+// ----------------- CARD DETALHADO DO FILME -----------------
 function openHistoryDetailCard(idx) {
   activeHistoryMovieIdx = idx;
   const m = historyMovies[idx];
   const container = document.getElementById('historyDetailCardContent');
 
+  const cleanDirector = (m.director && m.director !== 'undefined') ? m.director : '';
+  const cleanYear = (m.year && m.year !== 'undefined') ? m.year : '';
+  const cleanSynopsis = (m.synopsis && m.synopsis !== 'undefined') ? m.synopsis : '';
+  const cleanStreams = (m.streams && m.streams !== 'undefined') ? m.streams : '';
+
+  let reactionsListHtml = '';
+  if(!m.reactions || m.reactions.length === 0) {
+    reactionsListHtml = `<div style="font-size:13px; color:var(--muted); text-align:center; padding:12px; background:var(--bg); border-radius:10px;">Nenhuma reação ainda.</div>`;
+  } else {
+    reactionsListHtml = m.reactions.map((r, rIdx) => `
+      <div style="background:var(--bg); border:1px solid var(--line); border-radius:10px; padding:8px 12px; display:flex; align-items:center; justify-content:space-between; margin-bottom:6px;">
+        <div style="display:flex; align-items:center; gap:8px;">
+          <span style="font-size:18px;">${r.emoji}</span>
+          <span style="font-weight:800; color:var(--text); text-transform:capitalize; font-size:12px;">${r.memberName}</span>
+        </div>
+        <button class="btn btn-sm btn-danger" style="height:24px; padding:0 6px; font-size:10px;" onclick="deleteReactionModal(${rIdx})">Remover</button>
+      </div>
+    `).join('');
+  }
+
   container.innerHTML = `
     <div style="display:flex; gap:20px; align-items:flex-start; margin-bottom:20px;">
-      <img src="${m.thumb || 'https://via.placeholder.com/120x170/1e293b/fff?text=Filme'}" style="width:120px; height:170px; object-fit:cover; border-radius:10px; background:var(--dark); flex-shrink:0;" alt="Poster">
+      <img src="${m.thumb || 'https://via.placeholder.com/120x170/1e293b/fff?text=Filme'}" style="width:120px; height:170px; object-fit:contain; border-radius:10px; background:var(--dark); flex-shrink:0;" alt="Poster">
       <div style="flex:1;">
         <h2 style="margin:0 0 10px; color:var(--text); font-size:24px;">${m.title}</h2>
-        <div style="font-size:14px; color:var(--primary2); font-weight:800; margin-bottom:6px;">Diretor: ${m.director}</div>
-        <div style="font-size:13px; color:var(--muted); margin-bottom:12px;">Ano: ${m.year} | País: ${m.country || 'Não informado'}</div>
-        <div style="background:var(--bg); border:1px solid var(--line); border-radius:12px; padding:12px; margin-bottom:10px;">
-          <div style="font-size:11px; font-weight:800; color:var(--muted); text-transform:uppercase; margin-bottom:4px;">Sinopse</div>
-          <p style="margin:0; font-size:13px; color:var(--text); line-height:1.5;">${m.synopsis}</p>
+        
+        <div style="margin-bottom:8px;">
+          <label style="font-size:11px; color:var(--muted); font-weight:700; display:block; margin-bottom:2px;">DIRETOR:</label>
+          <input type="text" id="editDirector" class="input-box" value="${cleanDirector}" placeholder="Nome do diretor" onchange="updateHistoryField(${idx}, 'director', this.value)">
+        </div>
+
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-bottom:8px;">
+          <div>
+            <label style="font-size:11px; color:var(--muted); font-weight:700; display:block; margin-bottom:2px;">ANO:</label>
+            <input type="text" id="editYear" class="input-box" value="${cleanYear}" placeholder="Ano" onchange="updateHistoryField(${idx}, 'year', this.value)">
+          </div>
+          <div>
+            <label style="font-size:11px; color:var(--muted); font-weight:700; display:block; margin-bottom:2px;">PAÍS:</label>
+            <input type="text" id="editCountry" class="input-box" value="${m.country || ''}" placeholder="País" onchange="updateHistoryField(${idx}, 'country', this.value)">
+          </div>
+        </div>
+        
+        <div style="margin-bottom:8px;">
+          <label style="font-size:11px; color:var(--muted); font-weight:700; display:block; margin-bottom:2px;">SINOPSE:</label>
+          <textarea id="editSynopsis" class="input-box" rows="2" placeholder="Sinopse do filme" onchange="updateHistoryField(${idx}, 'synopsis', this.value)">${cleanSynopsis}</textarea>
+        </div>
+
+        <div>
+          <label style="font-size:11px; color:var(--muted); font-weight:700; display:block; margin-bottom:2px;">DISPONÍVEL EM STREAMS (BRASIL):</label>
+          <input type="text" id="editStreams" class="input-box" value="${cleanStreams}" placeholder="Ex: netflix, prime video, max" onchange="updateHistoryField(${idx}, 'streams', this.value)">
         </div>
       </div>
+    </div>
+
+    <hr style="border:0; border-top:1px solid var(--line); margin:20px 0;">
+
+    <h3 style="color:var(--text); margin-top:0; font-size:18px;">Gerenciar Reações</h3>
+    <div style="background:var(--bg); border:1px solid var(--line); border-radius:14px; padding:14px; margin-bottom:16px;">
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:12px;">
+        <select id="reactionMemberSelect" class="input-box">
+          ${membersData.map(mem => `<option value="${mem}">${mem.charAt(0).toUpperCase() + mem.slice(1)}</option>`).join('')}
+        </select>
+        <div style="font-size:12px; color:var(--muted); display:flex; align-items:center;">Escolha um emoji:</div>
+      </div>
+      
+      <div style="display:grid; grid-template-columns: repeat(5, 1fr); gap:6px; background:var(--panel); padding:10px; border-radius:10px; border:1px solid var(--line); max-height:180px; overflow-y:auto;">
+        ${classicEmojis.map(emoji => `
+          <button type="button" class="btn btn-sm" style="background:var(--bg); border:1px solid var(--line); font-size:18px; height:36px; width:100%; padding:0; display:grid; place-items:center;" onclick="toggleReactionModal('${emoji}')" title="Reagir/Remover ${emoji}">${emoji}</button>
+        `).join('')}
+      </div>
+    </div>
+
+    <div id="reactionsListContainer" style="max-height:220px; overflow-y:auto; padding-right:4px;">
+      ${reactionsListHtml}
     </div>
   `;
 
   document.getElementById('modalHistoryDetailCard').classList.add('open');
 }
 
+function updateHistoryField(idx, field, val) {
+  historyMovies[idx][field] = val;
+  saveData();
+  renderHistoryMovies();
+  renderDirectorsTab();
+  renderYearTab();
+}
+
+function toggleReactionModal(emoji) {
+  const memberSelect = document.getElementById('reactionMemberSelect');
+  const memberName = memberSelect ? memberSelect.value : membersData[0];
+  
+  const m = historyMovies[activeHistoryMovieIdx];
+  if(!m.reactions) m.reactions = [];
+
+  const existingIndex = m.reactions.findIndex(r => r.memberName === memberName);
+
+  if(existingIndex !== -1) {
+    if(m.reactions[existingIndex].emoji === emoji) {
+      m.reactions.splice(existingIndex, 1);
+    } else {
+      m.reactions[existingIndex].emoji = emoji;
+    }
+  } else {
+    m.reactions.push({ memberName, emoji });
+  }
+
+  saveData();
+  openHistoryDetailCard(activeHistoryMovieIdx);
+  renderHistoryMovies();
+}
+
+function deleteReactionModal(rIdx) {
+  const m = historyMovies[activeHistoryMovieIdx];
+  if(m && m.reactions) {
+    m.reactions.splice(rIdx, 1);
+    saveData();
+    openHistoryDetailCard(activeHistoryMovieIdx);
+    renderHistoryMovies();
+  }
+}
+
 // ----------------- ABA: DIRETORES -----------------
 function renderDirectorsTab() {
   const container = document.getElementById('directorsGridContainer');
-  const directorMap = {};
   
+  const directorMap = {};
   historyMovies.forEach(m => {
     const dirName = m.director && m.director.trim() !== '' && m.director !== 'undefined' ? m.director.trim() : 'Não informado';
-    if(!directorMap[dirName]) directorMap[dirName] = { count: 0, movies: [], thumb: m.thumb || '' };
+    if(!directorMap[dirName]) {
+      directorMap[dirName] = { count: 0, movies: [], thumb: m.thumb || '' };
+    }
     directorMap[dirName].count++;
     directorMap[dirName].movies.push(m);
-    if(!directorMap[dirName].thumb && m.thumb) directorMap[dirName].thumb = m.thumb;
+    if(!directorMap[dirName].thumb && m.thumb) {
+      directorMap[dirName].thumb = m.thumb;
+    }
   });
 
   const directorsList = Object.keys(directorMap).sort((a, b) => directorMap[b].count - directorMap[a].count);
@@ -1067,12 +1711,18 @@ function renderDirectorsTab() {
     const data = directorMap[dirName];
     const dirInfo = directorsState[dirName] || { photo: "", bio: "" };
     const avatarImg = dirInfo.photo ? dirInfo.photo : (data.thumb || 'https://via.placeholder.com/90/334155/fff?text=Diretor');
+    const cleanBio = dirInfo.bio ? dirInfo.bio : 'Sem biografia cadastrada.';
 
     return `
-      <div class="card clickable-card" style="padding:20px; text-align:center;">
-        <img src="${avatarImg}" style="width:90px; height:90px; border-radius:50%; object-fit:cover; margin:0 auto 12px; border:3px solid var(--primary); background:var(--dark);" alt="${dirName}">
+      <div class="card clickable-card" onclick="openDirectorModal('${dirName}')" style="padding:20px; text-align:center; transition: all .3s cubic-bezier(0.4, 0, 0.2, 1);">
+        <img src="${avatarImg}" id="gridDirectorAvatar-${dirName.replace(/[^a-zA-Z0-9]/g, '_')}" style="width:90px; height:90px; border-radius:50%; object-fit:cover; margin:0 auto 12px; border:3px solid var(--primary); background:var(--dark); box-shadow:0 8px 20px rgba(99,102,241,0.2);" alt="${dirName}">
         <h3 style="margin:0 0 4px; color:var(--text); font-size:18px;">${dirName}</h3>
         <div style="font-size:13px; font-weight:800; color:var(--primary2); margin-bottom:8px;">${data.count} ${data.count === 1 ? 'filme visto' : 'filmes vistos'}</div>
+        
+        <div style="font-size:12px; color:var(--muted); font-style:italic; margin-bottom:10px; padding:0 8px; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden;" title="${cleanBio}">
+          "${cleanBio}"
+        </div>
+
         <div style="font-size:12px; color:var(--muted); background:var(--bg); padding:10px; border-radius:10px; border:1px solid var(--line); text-align:left;">
           <strong>Obras:</strong> ${data.movies.map(m => m.title).join(', ')}
         </div>
@@ -1081,14 +1731,113 @@ function renderDirectorsTab() {
   }).join('');
 }
 
+function openDirectorModal(dirName) {
+  const directorMap = {};
+  historyMovies.forEach(m => {
+    const d = m.director && m.director.trim() !== '' && m.director !== 'undefined' ? m.director.trim() : 'Não informado';
+    if(!directorMap[d]) directorMap[d] = [];
+    directorMap[d].push(m);
+  });
+
+  const movies = directorMap[dirName] || [];
+  const dirInfo = directorsState[dirName] || { photo: "", bio: "" };
+  const avatarImg = dirInfo.photo ? dirInfo.photo : ((movies[0] && movies[0].thumb) ? movies[0].thumb : 'https://via.placeholder.com/120/334155/fff?text=Diretor');
+
+  const modalContainer = document.getElementById('directorModalContent');
+
+  let postersHtml = '';
+  if(movies.length === 0) {
+    postersHtml = `<div style="font-size:13px; color:var(--muted); text-align:center;">Nenhum pôster cadastrado.</div>`;
+  } else {
+    postersHtml = movies.map(m => `
+      <div style="text-align:center; transition:transform .2s ease;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform='translateY(0)'">
+        <img src="${m.thumb || 'https://via.placeholder.com/95x135/1e293b/fff?text=Filme'}" style="width:95px; height:135px; object-fit:cover; border-radius:12px; background:var(--dark); margin-bottom:6px; box-shadow:0 8px 20px rgba(0,0,0,0.4);" alt="Pôster">
+        <div style="font-size:11px; font-weight:700; color:var(--text); max-width:95px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;" title="${m.title}">${m.title}</div>
+      </div>
+    `).join('');
+  }
+
+  modalContainer.innerHTML = `
+    <style>
+      @keyframes floatPulse {
+        0% { transform: translateY(0); box-shadow: 0 10px 25px rgba(99,102,241,0.3); }
+        50% { transform: translateY(-5px); box-shadow: 0 15px 35px rgba(129,140,248,0.5); }
+        100% { transform: translateY(0); box-shadow: 0 10px 25px rgba(99,102,241,0.3); }
+      }
+      .director-avatar-glow {
+        animation: floatPulse 4s ease-in-out infinite;
+      }
+    </style>
+    <div style="display:flex; flex-direction:column; align-items:center; text-align:center;">
+      
+      <div style="position:relative; width:100px; height:100px; margin-bottom:14px;">
+        <img src="${avatarImg}" id="modalDirectorAvatar-${dirName.replace(/[^a-zA-Z0-9]/g, '_')}" class="director-avatar-glow" style="width:100px; height:100px; border-radius:50%; object-fit:cover; border:3px solid var(--primary2); background:var(--dark);" alt="${dirName}">
+        <label style="position:absolute; bottom:0; right:0; background:var(--primary); width:28px; height:28px; border-radius:50%; display:grid; place-items:center; cursor:pointer; border:2px solid var(--panel); transition:transform .2s;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'" title="Alterar foto">
+          📷
+          <input type="file" style="display:none;" accept="image/*" onchange="previewDirectorPhoto(event, '${dirName}')">
+        </label>
+      </div>
+
+      <h2 style="margin:0 0 4px; font-size:24px; font-weight:900; color:var(--text); letter-spacing:-0.03em;">${dirName}</h2>
+      <span style="font-size:12px; color:var(--muted); font-weight:700; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:18px;">✨ ${movies.length} ${movies.length === 1 ? 'obra no Gratia' : 'obras no Gratia'}</span>
+
+      <div style="width:100%; margin-bottom:20px; text-align:left;">
+        <label style="font-size:10px; color:var(--muted); font-weight:800; text-transform:uppercase; letter-spacing:0.08em; display:block; margin-bottom:6px;">Mini Bio / Estilo</label>
+        <textarea class="input-box" rows="2" style="background:rgba(15,23,42,0.6); border:1px solid var(--line); border-radius:12px; padding:10px 14px; font-size:13px; color:var(--text);" placeholder="Escreva uma bio curta e marcante sobre o diretor..." onchange="updateDirectorBio('${dirName}', this.value)">${dirInfo.bio || ''}</textarea>
+      </div>
+
+      <div style="width:100%; text-align:left;">
+        <label style="font-size:10px; color:var(--muted); font-weight:800; text-transform:uppercase; letter-spacing:0.08em; display:block; margin-bottom:10px;">Filmografia no Gratia</label>
+        <div style="display:flex; flex-wrap:wrap; gap:14px; justify-content:center; background:rgba(9,13,22,0.4); border:1px solid var(--line); border-radius:18px; padding:16px; max-height:240px; overflow-y:auto;">
+          ${postersHtml}
+        </div>
+      </div>
+
+    </div>
+  `;
+
+  document.getElementById('modalDirectorCard').classList.add('open');
+}
+
+function previewDirectorPhoto(event, dirName) {
+  const file = event.target.files[0];
+  if(file) {
+    const reader = new FileReader();
+    reader.onload = function(e) {
+      if(!directorsState[dirName]) directorsState[dirName] = { photo: "", bio: "" };
+      directorsState[dirName].photo = e.target.result;
+      saveData();
+      
+      const safeId = dirName.replace(/[^a-zA-Z0-9]/g, '_');
+      const modalAvatar = document.getElementById(`modalDirectorAvatar-${safeId}`);
+      if(modalAvatar) modalAvatar.src = e.target.result;
+
+      const gridAvatar = document.getElementById(`gridDirectorAvatar-${safeId}`);
+      if(gridAvatar) gridAvatar.src = e.target.result;
+
+      renderDirectorsTab();
+    }
+    reader.readAsDataURL(file);
+  }
+}
+
+function updateDirectorBio(dirName, bioVal) {
+  if(!directorsState[dirName]) directorsState[dirName] = { photo: "", bio: "" };
+  directorsState[dirName].bio = bioVal;
+  saveData();
+  renderDirectorsTab();
+}
+
 // ----------------- ABA: ANO -----------------
 function renderYearTab() {
   const container = document.getElementById('yearGridContainer');
+
   const yearMap = {};
-  
   historyMovies.forEach(m => {
     const yr = m.year && m.year.trim() !== '' && m.year !== 'undefined' ? m.year.trim() : 'Não informado';
-    if(!yearMap[yr]) yearMap[yr] = [];
+    if(!yearMap[yr]) {
+      yearMap[yr] = [];
+    }
     yearMap[yr].push(m);
   });
 
@@ -1099,22 +1848,176 @@ function renderYearTab() {
     return;
   }
 
-  container.innerHTML = sortedYears.map(yr => `
-    <div class="card" style="padding:16px;">
-      <div style="font-size:18px; font-weight:900; color:var(--primary2); margin-bottom:12px; border-bottom:1px solid var(--line); padding-bottom:8px;">📅 Ano: ${yr}</div>
-      <div style="display:flex; flex-direction:column; gap:8px;">
-        ${yearMap[yr].map(m => `
-          <div style="display:flex; align-items:center; gap:10px; background:var(--bg); padding:8px 10px; border-radius:8px; border:1px solid var(--line);">
-            <img src="${m.thumb || 'https://via.placeholder.com/40x55/1e293b/fff?text=F'}" style="width:40px; height:55px; object-fit:cover; border-radius:4px; background:var(--dark);" alt="Pôster">
-            <div style="flex:1; overflow:hidden;">
-              <div style="font-size:13px; font-weight:700; color:var(--text); white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">${m.title}</div>
-              <div style="font-size:11px; color:var(--muted);">Diretor: ${m.director}</div>
-            </div>
-          </div>
-        `).join('')}
+  container.innerHTML = sortedYears.map(yr => {
+    const moviesInYear = yearMap[yr];
+    let moviesHtml = moviesInYear.map(m => `
+      <div style="display:flex; align-items:center; gap:10px; background:var(--bg); padding:8px 10px; border-radius:8px; border:1px solid var(--line);">
+        <img src="${m.thumb || 'https://via.placeholder.com/40x55/1e293b/fff?text=F'}" style="width:40px; height:55px; object-fit:contain; border-radius:4px; background:var(--dark);" alt="Pôster">
+        <div style="flex:1; overflow:hidden;">
+          <div style="font-size:13px; font-weight:700; color:var(--text); white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">${m.title}</div>
+          <div style="font-size:11px; color:var(--muted);">Diretor: ${m.director}</div>
+        </div>
       </div>
-    </div>
-  `).join('');
+    `).join('');
+
+    return `
+      <div class="card" style="padding:16px;">
+        <div style="font-size:18px; font-weight:900; color:var(--primary2); margin-bottom:12px; border-bottom:1px solid var(--line); padding-bottom:8px;">📅 Ano: ${yr}</div>
+        <div style="display:flex; flex-direction:column; gap:8px;">
+          ${moviesHtml}
+        </div>
+      </div>
+    `;
+  }).join('');
+}
+
+// ----------------- LISTA DE CATEGORIAS -----------------
+function renderCategoriesList() {
+  const container = document.getElementById('categoryContainer');
+  
+  container.innerHTML = defaultCategories.map((catName, idx) => {
+    const itemState = categoryState[idx] || { checked: false, mode: "votacao", movies: [] };
+    const moviesList = getCategoryMovies(idx);
+
+    const hasMovies = moviesList.length > 0;
+    const cardClass = (itemState.checked || hasMovies) ? 'category-card category-done' : 'category-card';
+
+    return `
+      <div class="${cardClass}" id="cat-card-${idx}">
+        <div class="cat-checkbox-wrap">
+          <input type="checkbox" class="cat-checkbox" ${itemState.checked || hasMovies ? 'checked' : ''} onchange="updateCategoryCheckbox(${idx}, this.checked)" title="Marcar como concluída">
+        </div>
+        <div class="cat-info">
+          <span class="cat-number">Categoria #${idx + 1}</span>
+          <div class="cat-title">${catName}</div>
+        </div>
+        <div class="cat-controls">
+          ${hasMovies ? `
+            <button class="btn btn-sm" onclick="openCategoryDetailModal(${idx})" style="background: var(--bg); border: 1px solid var(--line); color: var(--text);">
+              👁️ Ver Filmes (${moviesList.length})
+            </button>
+          ` : ''}
+          <select style="width: 140px;" class="input-box" onchange="updateCategoryField(${idx}, 'mode', this.value)">
+            <option value="votacao" ${itemState.mode === 'votacao' ? 'selected' : ''}>🗳️ Votação</option>
+            <option value="sorteio" ${itemState.mode === 'sorteio' ? 'selected' : ''}>🎲 Sorteio</option>
+          </select>
+        </div>
+      </div>
+    `;
+  }).join('');
+}
+
+function updateCategoryCheckbox(idx, isChecked) {
+  if(!categoryState[idx]) categoryState[idx] = { checked: false, mode: "votacao", movies: [] };
+  categoryState[idx].checked = isChecked;
+  saveData();
+  renderCategoriesList();
+}
+
+function updateCategoryField(idx, field, val) {
+  if(!categoryState[idx]) categoryState[idx] = { checked: false, mode: "votacao", movies: [] };
+  categoryState[idx][field] = val;
+  saveData();
+}
+
+function openCategoryDetailModal(idx) {
+  activeCategoryModalIdx = idx;
+  const moviesList = getCategoryMovies(idx);
+
+  document.getElementById('modalCatTitle').textContent = `Categoria #${idx + 1}: ${defaultCategories[idx]}`;
+  const displayContainer = document.getElementById('catDetailDisplayContainer');
+
+  if(moviesList.length === 0) {
+    displayContainer.innerHTML = `<p style="color:var(--muted); text-align:center;">Nenhum filme indicado nesta categoria ainda.</p>`;
+  } else {
+    displayContainer.innerHTML = moviesList.map(m => `
+      <div style="background:var(--bg); border:1px solid var(--line); border-radius:14px; padding:14px 18px; display:flex; align-items:center; gap:16px; width:100%;">
+        <img src="${m.thumb || 'https://via.placeholder.com/70x100/1e293b/fff?text=Capa'}" style="width:65px; height:90px; object-fit:cover; border-radius:8px; background:var(--dark); flex-shrink:0;" alt="Capa">
+        <div style="flex:1;">
+          <h4 style="margin:0 0 6px; font-size:16px; color:var(--text); font-weight:800;">${m.title || 'Filme sem título'}</h4>
+          <div style="font-size:13px; color:var(--green); font-weight:700;">Indicado por: ${m.indicatedBy || 'Não informado'}</div>
+        </div>
+      </div>
+    `).join('');
+  }
+
+  document.getElementById('modalCategoryDetail').classList.add('open');
+}
+
+// ----------------- RODADAS (1 A 100) -----------------
+function renderRoundsSystem() {
+  const blocksBar = document.getElementById('roundBlocksBar');
+  const pillsGrid = document.getElementById('roundPillsGrid');
+  const contentContainer = document.getElementById('roundsContentContainer');
+
+  let blocksHtml = '';
+  for (let b = 1; b <= 10; b++) {
+    const start = (b - 1) * 10 + 1;
+    const end = b * 10;
+    const activeBlockClass = activeRoundBlock === b ? 'active' : '';
+    blocksHtml += `<button class="round-block-btn ${activeBlockClass}" onclick="switchRoundBlock(${b})">Rodadas ${start}–${end}</button>`;
+  }
+  blocksBar.innerHTML = blocksHtml;
+
+  let pillsHtml = '';
+  const blockStart = (activeRoundBlock - 1) * 10 + 1;
+  const blockEnd = activeRoundBlock * 10;
+
+  for (let i = blockStart; i <= blockEnd; i++) {
+    const activePillClass = activeRoundNum === i ? 'active' : '';
+    pillsHtml += `<button class="round-pill ${activePillClass}" onclick="switchRoundNum(${i})">${i}</button>`;
+  }
+  pillsGrid.innerHTML = pillsHtml;
+
+  if(!roundsState[activeRoundNum]) {
+    roundsState[activeRoundNum] = {};
+  }
+
+  let participantsCardsHtml = membersData.map(memberName => {
+    const pData = roundsState[activeRoundNum][memberName] || { sorteio: false, votacao: false };
+    const st = memberState[memberName] || { avatar: "" };
+    const avatarImg = st.avatar || `https://via.placeholder.com/50/334155/fff?text=${memberName[0].toUpperCase()}`;
+
+    return `
+      <div class="participant-card">
+        <div class="participant-header">
+          <img src="${avatarImg}" class="participant-avatar" alt="${memberName}">
+          <span class="participant-name">${memberName}</span>
+        </div>
+        <div class="participant-options">
+          <div class="option-row">
+            <span>🎲 Sorteio</span>
+            <input type="checkbox" class="option-checkbox" ${pData.sorteio ? 'checked' : ''} onchange="updateRoundCheckbox(${activeRoundNum}, '${memberName}', 'sorteio', this.checked)">
+          </div>
+          <div class="option-row">
+            <span>🗳️ Votação</span>
+            <input type="checkbox" class="option-checkbox" ${pData.votacao ? 'checked' : ''} onchange="updateRoundCheckbox(${activeRoundNum}, '${memberName}', 'votacao', this.checked)">
+          </div>
+        </div>
+      </div>
+    `;
+  }).join('');
+
+  contentContainer.innerHTML = `<div class="round-content-pane active">${participantsCardsHtml}</div>`;
+}
+
+function switchRoundBlock(blockNum) {
+  activeRoundBlock = blockNum;
+  activeRoundNum = (blockNum - 1) * 10 + 1;
+  renderRoundsSystem();
+}
+
+function switchRoundNum(roundNum) {
+  activeRoundNum = roundNum;
+  renderRoundsSystem();
+}
+
+function updateRoundCheckbox(roundNum, memberName, type, isChecked) {
+  if(!roundsState[roundNum]) roundsState[roundNum] = {};
+  if(!roundsState[roundNum][memberName]) roundsState[roundNum][memberName] = { sorteio: false, votacao: false };
+  
+  roundsState[roundNum][memberName][type] = isChecked;
+  saveData();
 }
 
 // ----------------- FILMES POR PAÍS -----------------
@@ -1164,17 +2067,21 @@ function renderCountryMovies() {
     return;
   }
 
-  gridContainer.innerHTML = filteredMovies.map((m, realIdx) => `
-    <div class="card" style="padding:16px; display:flex; flex-direction:row; gap:16px; align-items:center;">
-      <img src="${m.thumb || 'https://via.placeholder.com/100x140/1e293b/fff?text=Filme'}" style="width:75px; height:105px; object-fit:cover; border-radius:8px; background:var(--dark);" alt="Pôster">
-      <div style="flex:1;">
-        <div style="font-size:11px; color:var(--primary2); font-weight:800; text-transform:uppercase; margin-bottom:4px;">🌍 ${formatCountryName(m.country)}</div>
-        <h4 style="margin:0 0 6px; color:var(--text); font-size:16px;">${m.title}</h4>
-        ${m.link ? `<a href="${m.link}" target="_blank" style="font-size:12px; color:var(--muted); text-decoration:none;">🔗 Ver Link</a>` : ''}
+  gridContainer.innerHTML = filteredMovies.map(m => {
+    const realIdx = countryMovies.indexOf(m);
+    const formattedCountry = formatCountryName(m.country);
+    return `
+      <div class="card" style="padding:16px; display:flex; flex-direction:row; gap:16px; align-items:center;">
+        <img src="${m.thumb || 'https://via.placeholder.com/100x140/1e293b/fff?text=Filme'}" class="movie-thumb" alt="Pôster">
+        <div style="flex:1;">
+          <div style="font-size:11px; color:var(--primary2); font-weight:800; text-transform:uppercase; margin-bottom:4px;">🌍 ${formattedCountry}</div>
+          <h4 style="margin:0 0 6px; color:var(--text); font-size:16px;">${m.title}</h4>
+          ${m.link ? `<a href="${m.link}" target="_blank" style="font-size:12px; color:var(--muted); text-decoration:none;">🔗 Ver Link</a>` : ''}
+        </div>
+        <button class="btn btn-sm btn-danger" onclick="deleteCountryMovie(${realIdx})">X</button>
       </div>
-      <button class="btn btn-sm btn-danger" onclick="deleteCountryMovie(${realIdx})">X</button>
-    </div>
-  `).join('');
+    `;
+  }).join('');
 }
 
 function openAddCountryMovieModel() {
@@ -1190,7 +2097,9 @@ function previewCountryFile(input) {
   const file = input.files[0];
   if(file) {
     const reader = new FileReader();
-    reader.onload = e => tempCountryThumbBase64 = e.target.result;
+    reader.onload = function(e) {
+      tempCountryThumbBase64 = e.target.result;
+    }
     reader.readAsDataURL(file);
   }
 }
@@ -1216,6 +2125,7 @@ function deleteCountryMovie(idx) {
 }
 
 function closeModal(modalId) {
+  document.getElementById('modalDirectorCard').classList.remove('open');
   document.getElementById(modalId).classList.remove('open');
 }
 
@@ -1236,13 +2146,14 @@ window.addEventListener('click', function(e) {
 // Inicialização
 function init() {
   initHeroCustomization();
-  updateActiveUserBadge();
   renderMembers();
   renderVotesRank();
   renderMoviesRank();
   renderHistoryMovies();
   renderDirectorsTab();
   renderYearTab();
+  renderCategoriesList();
+  renderRoundsSystem();
   renderCountryMovies();
 }
 
